@@ -1,0 +1,54 @@
+.employee-info-page header {
+    display: flex;
+    justify-content: center;
+}
+
+.employee-info-page .header-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin-top: 4rem;
+}
+
+.employee-info-page .header-list li {
+    margin: 2rem;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.employee-info-page .header-list li p {
+    margin-top: 1rem;
+    color: #232323;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+}
+
+.employee-info-page .header-list li .line {
+    margin: 1rem;
+    width: 10rem;
+    height: 2px;
+    background-color: #000000;
+}
+
+.employee-info-page .header-list li .large-line {
+    width: 100%;
+}
+
+.employee-info-page main {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    justify-content:center;
+}
+
+.employee-info-page .main-section {
+    width: 70%;
+    min-height: 60vh;
+    background-color: #FFFFFF;
+}
