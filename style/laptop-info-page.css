@@ -119,10 +119,45 @@
     cursor: pointer;
 }
 
-.info-page .laptop-info  .line {
+.info-page .laptop-info .line {
     background-color: #C7C7C7;
     height: 1px;
     width: 93%;
     margin-left: 4rem;
     margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.info-page .laptop-info .cpu-select {
+    margin-right: 1rem;
+    width: 16rem;
+
+}
+
+.info-page .laptop-info .cpu-inline-form {
+    margin-right: 1rem;
+    width: 16rem;
+}
+
+
+.info-page .laptop-info .cpu-select .select-box-container {
+    width: 16rem;
+}
+
+
+.info-page .laptop-info .cpu-info-list li {
+    margin-left: 0;
+}
+
+
+.info-page .laptop-info .cpu-info input {
+    width: 17rem;
+}
+
+.info-page .laptop-info .cpu-info {
+    margin-left: 0;
+}
+
+.info-page .laptop-info .cpu-features .select-box .arrow {
+    left: -10%;
 }
