@@ -1,9 +1,9 @@
-.employee-info-page header {
+.info-page header {
     display: flex;
     justify-content: center;
 }
 
-.employee-info-page .header-list {
+.info-page .header-list {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -12,7 +12,7 @@
     margin-top: 4rem;
 }
 
-.employee-info-page .header-list li {
+.info-page .header-list li {
     margin: 2rem;
     margin-left: 3rem;
     display: flex;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.employee-info-page .header-list li p {
+.info-page .header-list li p {
     margin-top: 1rem;
     color: #232323;
     font-weight: bold;
@@ -29,39 +29,40 @@
     line-height: 1.2rem;
 }
 
-.employee-info-page .header-list li .line {
+.info-page .header-list li .line {
     margin: 1rem;
     width: 10rem;
     height: 2px;
     background-color: #000000;
 }
 
-.employee-info-page .header-list li .large-line {
+.info-page .header-list li .large-line {
     width: 13rem;
 }
 
-.employee-info-page main {
+.info-page main {
     width: 100%;
     min-height: 60vh;
     display: flex;
     justify-content: center;
 }
 
-.employee-info-page .main-section {
+.info-page .main-section {
     width: 70%;
-    min-height: 100vh;
+    min-height: 95vh;
     background-color: #FFFFFF;
     border-radius: 1rem;
 }
 
-.employee-info-page .employee-info {
+.info-page .employee-info {
     width: 100%;
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     justify-content: center;
+    display: none;
 }
 
-.employee-info-page .employee-info form {
+.info-page .employee-info form {
     width: 70%;
     background-color: #FFFFFF;
     margin-top: 5rem;
@@ -69,39 +70,39 @@
     flex-direction: column
 }
 
-.employee-info-page .employee-info form ul {
+.info-page .employee-info form ul {
     list-style: none;
 }
 
-.employee-info-page .employee-info .form-control {
+.info-page .employee-info .form-control {
     display: flex;
     margin-top: 1rem;
 }
 
-.employee-info-page .employee-info .form-control li {
+.info-page .employee-info .form-control li {
     margin-left: 2rem;
 }
 
-.employee-info-page .inline-form {
+.info-page .employee-info .inline-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.employee-info-page .inline-form li p {
+.info-page .employee-info .inline-form li p {
     font-weight: 500;
     font-size: 1.1rem;
     color: #000000;
 }
 
-.employee-info-page .inline-form li .validation-error {
+.info-page .employee-info .inline-form li .validation-error {
     font-weight: 300;
     color: #2E2E2E;
     font-size: 14px;
 }
 
 
-.employee-info-page .inline-form input {
+.info-page .employee-info .inline-form input {
     font: 15px 'Montserrat', sans-serif;
     padding-top: 0;
     padding-left: 1rem;
@@ -117,16 +118,16 @@
 }
 
 
-.employee-info-page .form-control .select-box-list {
+.info-page .employee-info .form-control .select-box-list {
     width: 93%;
     box-sizing: border-box;
 }
 
-.employee-info-page .form-control .select-box-container {
+.info-page .employee-info .form-control .select-box-container {
     width: 100%;
 }
 
-.employee-info-page .form-control .select-box {
+.info-page .employee-info .form-control .select-box {
     margin-top: 3rem;
     display: flex;
     padding: 0;
@@ -138,7 +139,7 @@
     width: 100%;
 }
 
-.employee-info-page .form-control select {
+.info-page .employee-info .form-control select {
     font: 18px 'Montserrat', sans-serif;
     padding-left: 3rem;
     color: #080808;
@@ -157,7 +158,7 @@
     box-sizing: border-box;
 }
 
-.employee-info-page .form-control .select-box .arrow {
+.info-page .employee-info .form-control .select-box .arrow {
     border: solid #484848;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -168,13 +169,13 @@
     bottom: 2%;
 }
 
-.employee-info-page .form-control .select-box .down {
+.info-page .employee-info .form-control .select-box .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     cursor: pointer;
 }
 
-.employee-info-page .input-control {
+.info-page .employee-info .input-control {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -185,28 +186,28 @@
 }
 
 
-.employee-info-page .input-control ul {
+.info-page .employee-info .input-control ul {
     width: 100%;
 }
 
-.employee-info-page .input-control li {
+.info-page .employee-info .input-control li {
     width: 93%;
 }
 
 
-.employee-info-page .input-control li p {
+.info-page .employee-info .input-control li p {
     font-weight: 500;
     font-size: 1.1rem;
     color: #000000;
 }
 
-.employee-info-page .input-control li .validation-error {
+.info-page .employee-info .input-control li .validation-error {
     font-weight: 300;
     color: #2E2E2E;
     font-size: 14px;
 }
 
-.employee-info-page .input-control input {
+.info-page .employee-info .input-control input {
     font: 15px 'Montserrat', sans-serif;
     padding-top: 0;
     padding-left: 1rem;
@@ -221,32 +222,32 @@
     width: 100%;
 }
 
-.employee-info-page .next-button-container {
+.info-page .employee-info .next-button-container {
     width: 100%;
     height: 90%;
     display: flex;
     justify-content: flex-end;
 }
 
-.employee-info-page .next-button-container .next-button-background {
+.info-page .employee-info .next-button-container .next-button-background {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #62A1EB;
-    height: 25%;
+    height: 30%;
     width: 18%;
     border-radius: 8px;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 
-.employee-info-page .next-button-container a {
+.info-page .employee-info .next-button-container a {
     color: #FFFFFF;
     font-size: 1.1rem;
     text-decoration: none;
 }
 
-.employee-info-page footer {
+.info-page footer {
     margin-top: 4rem;
     margin-bottom: 2rem;
     display: flex;
