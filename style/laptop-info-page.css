@@ -139,7 +139,6 @@
     width: 16rem;
 }
 
-
 .info-page .laptop-info .cpu-select .select-box-container {
     width: 16rem;
 }
@@ -160,4 +159,39 @@
 
 .info-page .laptop-info .cpu-features .select-box .arrow {
     left: -10%;
+}
+
+.info-page .laptop-info .ram-memory-info {
+    margin-top: 5rem;
+}
+
+
+.info-page .laptop-info .ram-and-memory {
+    display: flex;
+}
+
+.info-page .laptop-info .input-label-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-page .laptop-info label {
+    font: 15px 'Montserrat', sans-serif;
+    margin: 0;
+    margin-left: 0.5rem;
+    margin-right: 3rem;
+    margin-top: 0.5rem;
+}
+
+.info-page .laptop-info .input-label-container input {
+    margin: 0;
+    padding: 0;
+}
+
+.info-page .laptop-info .input-label-container input[type=radio] {
+    width: 1.2rem;
+    box-shadow: none;
+    margin-top: 0.5rem;
+    margin-right: 0.7rem;
 }

@@ -210,13 +210,14 @@
                                 <ul class="inline-form cpu-info-list">
                                     <li>
                                         <p>
-                                            ლეპტოპის სახელი
+                                            CPU-ს ბირთვი
+
                                         </p>
 
                                     </li>
                                     <li>
-                                        <input type="text" class="laptop-name error" name="laptop-name"
-                                            placeholder="ლეპტოპის სახელი" value="">
+                                        <input type="text" class="cpu-core error" name="cpu-core"
+                                            placeholder="CPU ბირთვი" value="">
 
                                     </li>
                                     <li>
@@ -230,13 +231,13 @@
                                 <ul class="inline-form cpu-info-list">
                                     <li>
                                         <p>
-                                            ლეპტოპის სახელი
+                                            CPU-ს ნაკადი
                                         </p>
 
                                     </li>
                                     <li>
-                                        <input type="text" class="laptop-name error" name="laptop-name"
-                                            placeholder="ლეპტოპის სახელი" value="">
+                                        <input type="text" class="cpu-thread error" name="cpu-thread"
+                                            placeholder="CPU-ს ნაკადი" value="">
 
                                     </li>
                                     <li>
@@ -246,6 +247,49 @@
                                 </ul>
                             </li>
                         </ul>
+                        <ul class="form-control ram-memory-info">
+                            <li>
+                                <ul class="inline-form">
+                                    <li>
+                                        <p>
+                                            ლეპტოპის RAM (GB)
+                                        </p>
+                                    </li>
+
+                                    <li>
+                                        <input type="text" class="laptop-ram error" name="laptop-ram"
+                                            placeholder="ლეპტოპის RAM (GB)" value="">
+                                    </li>
+
+                                    <li>
+                                        <div class="first-error validation-error">მინიმუმ ორი ასო</div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="inline-form ram-and-memory">
+                                    <li>
+                                        <p>
+                                            მეხსიერების ტიპი
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <div class="input-label-container">
+
+                                            <input type="radio" name="memory-type" id="SSD" class="memory-type"
+                                                value="SSD">
+                                            <label for="SSD">SSD</label>
+
+                                            <input type="radio" name="memory-type" id="HDD" class="memory-type"
+                                                value="HDD">
+                                            <label for="HDD">HDD</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <div class="line"></div>
 
                     </form>
                 </section>
