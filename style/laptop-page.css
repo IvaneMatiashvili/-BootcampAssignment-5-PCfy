@@ -1,0 +1,128 @@
+.info-page .laptop-info {
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    justify-content: center;
+}
+
+.info-page .laptop-info form {
+    width: 70%;
+    background-color: #FFFFFF;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column
+}
+
+.info-page .laptop-info form ul {
+    list-style: none;
+}
+
+.info-page .laptop-info .form-control {
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.info-page .laptop-info .form-control li {
+    margin-left: 2rem;
+}
+
+.info-page .laptop-info .inline-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-page .laptop-info .inline-form li p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+.info-page .laptop-info .inline-form li .validation-error {
+    font-weight: 300;
+    color: #2E2E2E;
+    font-size: 14px;
+}
+
+
+.info-page .laptop-info .inline-form input {
+    font: 15px 'Montserrat', sans-serif;
+    padding-top: 0;
+    padding-left: 1rem;
+    margin: 10px 0;
+    margin-top: 10px;
+    border: 2px solid #8AC0E2;
+    border-radius: 8px;
+    width: 25rem;
+    height: 3.5rem;
+    display: block;
+    box-sizing: border-box;
+
+}
+
+.info-page .laptop-info .form-control .select-box-list {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.info-page .laptop-info .form-control .select-box-container {
+    width: 25rem;
+}
+
+.info-page .laptop-info .form-control .select-box {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    height: 3.5rem;
+    background-color: #EBEBEB;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.info-page .laptop-info .form-control select {
+    font: 18px 'Montserrat', sans-serif;
+    padding-left: 3rem;
+    color: #080808;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    min-width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding-left: 2rem;
+    border-radius: 8px;
+    background: none;
+    z-index: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.info-page .laptop-info .form-control .select-box .arrow {
+    border: solid #484848;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+    left: -7%;
+    cursor: pointer;
+    bottom: 5%;
+}
+
+.info-page .laptop-info .form-control .select-box .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.info-page .laptop-info  .line {
+    background-color: #C7C7C7;
+    height: 1px;
+    width: 93%;
+    margin-left: 4rem;
+    margin-top: 3rem;
+}
