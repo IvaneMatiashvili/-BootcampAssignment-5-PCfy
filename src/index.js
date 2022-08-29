@@ -1,14 +1,13 @@
-const navBtn = document.querySelectorAll('.nav-btn');
+const navBtnContainer = document.querySelectorAll('.nav-btn-container');
 
 const { log: l } = console;
 
-
 const changePageHelper = () => {
-        navBtn[0]?.addEventListener('click', () => {
+        navBtnContainer[0]?.addEventListener('click', () => {
             window.location.href = './info-page.html';
         })
         
-        navBtn[1]?.addEventListener('click', () => {
+        navBtnContainer[1]?.addEventListener('click', () => {
             window.location.href = './';
         })
 }
