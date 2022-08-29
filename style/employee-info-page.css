@@ -56,7 +56,7 @@
 
 .info-page .employee-info {
     width: 100%;
-    min-height: 95vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     display: none;
@@ -133,10 +133,14 @@
     padding: 0;
     align-items: center;
     height: 3.5rem;
-    background-color: #EBEBEB;
     border-radius: 8px;
     box-sizing: border-box;
     width: 100%;
+    background: #EBEBEB url(../icon/arrow.png);
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: 98%;
+    cursor: pointer;
 }
 
 .info-page .employee-info .form-control select {
@@ -156,23 +160,6 @@
     z-index: 1;
     overflow: hidden;
     box-sizing: border-box;
-}
-
-.info-page .employee-info .form-control .select-box .arrow {
-    border: solid #484848;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    position: relative;
-    left: -4%;
-    cursor: pointer;
-    bottom: 5%;
-}
-
-.info-page .employee-info .form-control .select-box .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    cursor: pointer;
 }
 
 .info-page .employee-info .input-control {

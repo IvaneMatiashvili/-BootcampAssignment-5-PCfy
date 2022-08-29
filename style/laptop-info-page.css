@@ -77,10 +77,14 @@
     padding: 0;
     align-items: center;
     height: 3.5rem;
-    background-color: #EBEBEB;
     border-radius: 8px;
     box-sizing: border-box;
     width: 100%;
+    background: #EBEBEB url(../icon/arrow.png);
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: 95%;
+    cursor: pointer;
 }
 
 .info-page .laptop-info .form-control select {
@@ -100,23 +104,6 @@
     z-index: 1;
     overflow: hidden;
     box-sizing: border-box;
-}
-
-.info-page .laptop-info .form-control .select-box .arrow {
-    border: solid #484848;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    position: relative;
-    left: -7%;
-    cursor: pointer;
-    bottom: 5%;
-}
-
-.info-page .laptop-info .form-control .select-box .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    cursor: pointer;
 }
 
 .info-page .laptop-info .line {
@@ -157,8 +144,8 @@
     margin-left: 0;
 }
 
-.info-page .laptop-info .cpu-features .select-box .arrow {
-    left: -10%;
+.info-page .laptop-info .cpu-features .select-box {
+    background-position: 93%;
 }
 
 .info-page .laptop-info .ram-memory-info {
