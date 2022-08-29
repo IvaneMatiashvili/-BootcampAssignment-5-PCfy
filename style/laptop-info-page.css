@@ -208,6 +208,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     right: 5%;
 }
 
+.info-page .laptop-info .laptop-price {
+    background: url(../icon/lari.png);
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: 96%;
+}
+
 .info-page .laptop-info .laptop-status-form {
     margin-top: 2rem;
 }
@@ -222,20 +229,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
-.info-page .laptop-info .next-btn-container  {
+.info-page .laptop-info .next-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.info-page .laptop-info .next-btn-container  {
+.info-page .laptop-info .next-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #62A1EB;
     border-radius: 8px;
-    height: 3.6rem;
+    height: 3.7rem;
     width: 25%;
 }
 
