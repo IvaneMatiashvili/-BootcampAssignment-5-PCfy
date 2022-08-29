@@ -1,6 +1,6 @@
 .info-page .laptop-info {
     width: 100%;
-    min-height: 95vh;
+    min-height: 120vh;
     display: flex;
     justify-content: center;
 }
@@ -194,4 +194,58 @@
     box-shadow: none;
     margin-top: 0.5rem;
     margin-right: 0.7rem;
+}
+
+.info-page .laptop-info .purchase-number {
+    cursor: pointer;
+}
+
+
+.info-page .laptop-info .laptop-date input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    position: relative;
+    right: 5%;
+}
+
+.info-page .laptop-info .laptop-status-form {
+    margin-top: 2rem;
+}
+
+.info-page .laptop-info .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
+    margin-left: 4rem;
+    width: 93%;
+}
+
+
+.info-page .laptop-info .next-btn-container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.info-page .laptop-info .next-btn-container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #62A1EB;
+    border-radius: 8px;
+    height: 3.6rem;
+    width: 25%;
+}
+
+
+.info-page .laptop-info .button-container a {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.info-page .laptop-info .go-back-btn-container a {
+    color: #62A1EB;
 }

@@ -290,7 +290,79 @@
 
                         </ul>
                         <div class="line"></div>
+                        <ul class="form-control">
+                            <li>
 
+                                <ul class="inline-form leptop-date">
+                                    <li>
+                                        <p>
+                                            შეძენის რიცხვი (არჩევითი)
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <input type="text" class="purchase-number error" name="purchase-number"
+                                            placeholder="დდ / თთ / წწწწ" value=""
+                                            onfocus="(this.type='date', this.showPicker())" onblur="this.type='text'">
+
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="inline-form">
+                                    <li>
+                                        <p>
+                                            ლეპტოპის ფასი
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <input type="text" class="laptop-price error" name="laptop-price"
+                                            placeholder="ლეპტოპის ფასი" value="">
+
+                                    </li>
+                                    <li>
+                                        <div class="first-error validation-error">მინიმუმ ორი ასო</div>
+
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+
+                        <ul class="form-control">
+
+                            <li>
+                                <ul class="inline-form laptop-status-form">
+                                    <li>
+                                        <p>
+                                            ლეპტოპის მდგომარეობა
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <div class="input-label-container">
+
+                                            <input type="radio" name="laptop-status" id="new" class="laptop-status"
+                                                value="new">
+                                            <label for="new">ახალი</label>
+
+                                            <input type="radio" name="laptop-status" id="old" class="laptop-status"
+                                                value="old">
+                                            <label for="old">მეორადი</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="button-container">
+                            <div class="go-back-btn-container">
+                                <a href="" class="go-back-btn">უკან</a>
+                            </div>
+                            <div class="next-btn-container">
+                                <a href="" class="next-btn">დამახსოვრება</a>
+                            </div>
+                        </div>
                     </form>
                 </section>
 
