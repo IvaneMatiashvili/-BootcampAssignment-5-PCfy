@@ -26,12 +26,17 @@
     display: flex;
 }
 
+.landing-page .landing-page-img  img{
+    width: 100%;
+    height: 90%;
+}
+
 .landing-page footer {
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .landing-page .navigation {
@@ -44,15 +49,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6rem;
 }
 
 .landing-page .navigation li {
     text-decoration: none;
     margin-top: 2rem;
     background-color: #62A1EB;
-    width: 70%;
-    height: 4rem;
+    width: 65%;
+    height: 3.6rem;
     display: flex;
     align-items: center;
     text-align: center;

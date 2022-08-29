@@ -1,6 +1,6 @@
 .info-page .laptop-info {
     width: 100%;
-    min-height: 180vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
 }
@@ -301,6 +301,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 4rem;
     margin-left: 4rem;
     width: 93%;
+    margin-bottom: 5rem;
 }
 
 
