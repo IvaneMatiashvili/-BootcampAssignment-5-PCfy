@@ -61,6 +61,7 @@
     align-items: center;
     text-align: center;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .landing-page .navigation a {
