@@ -1,3 +1,6 @@
+const employeeInfo = document.querySelector('.employee-info');
+const laptopInfo = document.querySelector('.laptop-info');
+const goBackBtn = document.querySelector('.go-back-btn');
 const submitContainer = document.querySelector('.submit-container');
 
 
@@ -10,3 +13,13 @@ const changePageHelper = () => {
 }
 
 changePageHelper();
+
+
+const showEmployeeInfo = () => {
+    goBackBtn?.addEventListener('click', () => {
+        laptopInfo.style.display = 'none';
+        employeeInfo.style.display = 'flex';
+    })
+}
+
+showEmployeeInfo();
