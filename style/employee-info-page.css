@@ -27,10 +27,10 @@
     font-weight: bold;
     font-size: 1.2rem;
     line-height: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .info-page .header-list li .line {
-    margin: 1rem;
     width: 10rem;
     height: 2px;
     background-color: #000000;
@@ -38,6 +38,10 @@
 
 .info-page .header-list li .large-line {
     width: 13rem;
+}
+
+.info-page .header-list li .laptop-line {
+    display: none;
 }
 
 .info-page main {
