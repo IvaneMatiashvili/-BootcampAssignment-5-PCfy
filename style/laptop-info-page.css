@@ -1,6 +1,6 @@
 .info-page .laptop-info {
     width: 100%;
-    min-height: 120vh;
+    min-height: 170vh;
     display: flex;
     justify-content: center;
 }
@@ -11,6 +11,90 @@
     margin-top: 5rem;
     display: flex;
     flex-direction: column
+}
+
+.info-page .laptop-info .img-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 93%;
+    min-height: 26.5rem;
+    border-radius: 1.1rem;
+    margin-left: 4rem;
+    cursor: pointer;
+    background: url(../img/upload-file-borer.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 4rem;
+}
+
+.info-page .laptop-info .img-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.info-page .laptop-info .add-img-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-page .laptop-info .add-img-container .choose-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-page .laptop-info .add-img-container p {
+    color: #4386A9;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.info-page .laptop-info .file-upload-container {
+    margin-top: 4rem;
+    display: flex;
+    width: 100%;
+    height: 14%;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-page .laptop-info .label-container {
+    display: flex;
+    width: 27%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #62A1EB;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.info-page .laptop-info .label-upload-img {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+.info-page .laptop-info .img-form-container .upload-img {
+    width: 54rem;
+    height: 43%;
+    position: absolute;
+    left: 29%;
+    top: 28%;
+    background-color: white;
+    opacity: 0;
 }
 
 .info-page .laptop-info form ul {
