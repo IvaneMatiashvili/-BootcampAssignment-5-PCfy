@@ -4,7 +4,7 @@ const laptopInfo = document.querySelector('.laptop-info');
 const employeeLine = document.querySelector('.employee-line');
 const laptopLine = document.querySelector('.laptop-line');
 
-const imageInput = document.querySelector('.upload-img');
+let imageInput = document.querySelector('.upload-img');
 const imgFormContainer = document.querySelector('.img-form-container');
 const imgForm = document.querySelector('.img-form');
 
@@ -13,8 +13,6 @@ const submitContainer = document.querySelector('.submit-container');
 
 
 const { log: l } = console;
-
-
 
 
 
@@ -29,13 +27,16 @@ const imgUploadGenerator = () => {
 
             imgFormContainer.style.backgroundImage = `url(${uploadedImage})`;
             imgForm.style.opacity = '0';
+            imageInput.title = 'upload new file';
         })
         reader.readAsDataURL(this.files[0]);
     })
 
     if (localStorage.getItem('resent-image')) {
+
         imgFormContainer.style.backgroundImage = `url(${localStorage.getItem('resent-image')})`;
         imgForm.style.opacity = '0';
+        imageInput.title = 'upload new file';
     }
 
 }
@@ -87,6 +88,7 @@ const showEmployeeInfo = () => {
         employeeInfo.style.display = 'flex';
 
         localStorage.setItem('info-page-content', '0')
+        localStorage.setItem('info-page-line', '0')
 
         laptopLine.style.display = 'none';
         employeeLine.style.display = 'block';

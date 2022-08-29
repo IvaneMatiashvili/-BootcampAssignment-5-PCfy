@@ -16,6 +16,7 @@ const showLaptopInfo = () => {
         laptopInfo.style.display = 'flex';
 
         localStorage.setItem('info-page-content', '1')
+        localStorage.setItem('info-page-line', '1')
 
         employeeLine.style.display = 'none';
         laptopLine.style.display = 'flex';
@@ -26,6 +27,7 @@ const showLaptopInfo = () => {
         laptopInfo.style.display = 'flex';
 
         localStorage.setItem('info-page-content', '1')
+        localStorage.setItem('info-page-line', '1')
 
         employeeLine.style.display = 'none';
         laptopLine.style.display = 'flex';
