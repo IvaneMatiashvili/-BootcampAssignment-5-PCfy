@@ -56,10 +56,9 @@
 
 .info-page .employee-info {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
+    min-height: 110vh;
     display: none;
+    justify-content: center;
 }
 
 .info-page .employee-info form {
@@ -221,17 +220,18 @@
     justify-content: center;
     align-items: center;
     background-color: #62A1EB;
-    height: 30%;
+    height: 3.5rem;
     width: 18%;
     border-radius: 8px;
     margin-top: 4rem;
+    cursor: pointer;
 }
 
 
-.info-page .employee-info .next-button-container a {
+.info-page .employee-info .next-button-container p {
     color: #FFFFFF;
     font-size: 1.1rem;
-    text-decoration: none;
+    cursor: pointer;
 }
 
 .info-page footer {

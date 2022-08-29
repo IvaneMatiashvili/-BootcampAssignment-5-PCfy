@@ -1,6 +1,6 @@
 .info-page .laptop-info {
     width: 100%;
-    min-height: 170vh;
+    min-height: 180vh;
     display: flex;
     justify-content: center;
 }
@@ -26,6 +26,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     margin-bottom: 4rem;
+    cursor: pointer;
 }
 
 .info-page .laptop-info .img-form {
@@ -95,6 +96,7 @@
     top: 28%;
     background-color: white;
     opacity: 0;
+    cursor: pointer;
 }
 
 .info-page .laptop-info form ul {
@@ -253,6 +255,7 @@
     margin-left: 0.5rem;
     margin-right: 3rem;
     margin-top: 0.5rem;
+    cursor: pointer;
 }
 
 .info-page .laptop-info .input-label-container input {
@@ -265,6 +268,7 @@
     box-shadow: none;
     margin-top: 0.5rem;
     margin-right: 0.7rem;
+    cursor: pointer;
 }
 
 .info-page .laptop-info .purchase-number {
@@ -315,6 +319,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: 8px;
     height: 3.7rem;
     width: 25%;
+    cursor: pointer;
 }
 
 
@@ -324,6 +329,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     text-decoration: none;
 }
 
-.info-page .laptop-info .go-back-btn-container a {
+.info-page .laptop-info .go-back-btn-container p {
     color: #62A1EB;
+    font-size: 1.1rem;
+    cursor: pointer;
 }
