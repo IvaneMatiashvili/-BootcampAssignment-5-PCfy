@@ -23,6 +23,8 @@ const showEmployeeInfo = () => {
     goBackBtn?.addEventListener('click', () => {
         laptopInfo.style.display = 'none';
         employeeInfo.style.display = 'flex';
+        
+        localStorage.setItem('info-page-content', '0')
 
         laptopLine.style.display = 'none';
         employeeLine.style.display = 'block';
