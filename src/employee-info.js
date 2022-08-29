@@ -14,15 +14,19 @@ const showLaptopInfo = () => {
     nextBtn?.addEventListener('click', () => {
         employeeInfo.style.display = 'none';
         laptopInfo.style.display = 'flex';
-        
+
+        localStorage.setItem('info-page-content', '1')
+
         employeeLine.style.display = 'none';
         laptopLine.style.display = 'flex';
     })
-    
+
     nextBtnBackgroundContainer?.addEventListener('click', () => {
         employeeInfo.style.display = 'none';
         laptopInfo.style.display = 'flex';
-        
+
+        localStorage.setItem('info-page-content', '1')
+
         employeeLine.style.display = 'none';
         laptopLine.style.display = 'flex';
     })
