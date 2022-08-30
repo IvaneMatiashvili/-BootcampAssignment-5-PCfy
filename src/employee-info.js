@@ -78,7 +78,6 @@ async function getPositionData() {
         }
 
         if (+localStorage.getItem('team-id') === elm.team_id) {
-            l(2);
 
             let option = document.createElement('option');
             let node = document.createTextNode(elm.name);
