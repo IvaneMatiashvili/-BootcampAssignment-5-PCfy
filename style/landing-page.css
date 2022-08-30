@@ -26,7 +26,7 @@
     display: flex;
 }
 
-.landing-page .landing-page-img  img{
+.landing-page .landing-page-img img {
     width: 100%;
     height: 90%;
 }
@@ -56,7 +56,7 @@
     margin-top: 2rem;
     background-color: #62A1EB;
     width: 65%;
-    height: 3.6rem;
+    height: 3.75rem;
     display: flex;
     align-items: center;
     text-align: center;
@@ -64,12 +64,26 @@
     cursor: pointer;
 }
 
+.landing-page .add-record-btn-container {
+
+    background: #FFFFFF url(../icon/add-record.png);
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.landing-page .record-list-btn-container {
+
+    background: #FFFFFF url(../icon/record-list.png);
+    background-size: 48%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
 .landing-page .navigation a {
     text-decoration: none;
-    font-size: 1.4rem;
-    color: #FFFFFF;
     width: 100%;
-    font-family: 'Montserrat';
-    font-weight: normal;
-    text-transform: uppercase;
+    height: 100%;
 }

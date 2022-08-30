@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../font/HelveticaNeue-Medium-11.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: bold;
+    src: url(../font/HelveticaNeue-Bold-02.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../font/HelveticaNeue-01.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../font/HelveticaNeue-Light-08.ttf) format('truetype');
+}
+
 .info-page .laptop-info {
     width: 100%;
     min-height: 100vh;
