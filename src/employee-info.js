@@ -16,6 +16,7 @@ const { log: l } = console;
 let teamResult = new Array();
 let teamId = 0;
 
+
 async function getTeamsData() {
 
     const response = await fetch('https://pcfy.redberryinternship.ge/api/teams');
@@ -33,6 +34,11 @@ async function getTeamsData() {
 
     team.addEventListener('input', (e) => {
         localStorage.setItem('team', `${team.value}`);
+        teamResult?.forEach((el) => {
+            if (el.name === team.value) {
+                localStorage.setItem('team-id', `${el.id}`);
+            }
+        })
     })
 
     if (localStorage.getItem('team')) {
@@ -55,26 +61,67 @@ async function getPositionData() {
     positionResult = responseData.data;
 
 
-    filterPositionsData();
+    positionResult.forEach((elm,inx) => {
+        if (inx === 0) {
+
+            let option = document.createElement('option');
+            let node = document.createTextNode('პოზიცია');
+
+            option.value = 'პოზიცია';
+            option.disabled = true;
+            option.selected = true;
+            option.hidden = true;
+
+            option.appendChild(node);
+            position.appendChild(option);
+
+        }
+
+        if (+localStorage.getItem('team-id') === elm.team_id) {
+            l(2);
+
+            let option = document.createElement('option');
+            let node = document.createTextNode(elm.name);
+
+            option.value = elm.name;
+            option.appendChild(node);
+            position.appendChild(option);
+        }
+    })
 
     team.addEventListener('input', (e) => {
 
         filterPositionsData();
+        localStorage.setItem('position', `${position.value}`);
 
     })
+
+
+    position.addEventListener('input', (e) => {
+        localStorage.setItem('position', `${position.value}`);
+    })
+
+
+    if (localStorage.getItem('position')) {
+        position.value = localStorage.getItem('position');
+        position.disabled = false;
+    }
+
 
 }
 
 getPositionData();
 
+
+
 const filterPositionsData = () => {
 
     let teamId = 0;
     position.disabled = false;
-    l('some')
+
+
 
     teamResult?.forEach(el => {
-        l('some')
         for (let i = 1; i < position.children.length; i++) {
             position.children[i].remove();
         }
@@ -84,7 +131,21 @@ const filterPositionsData = () => {
         }
     })
 
-    positionResult.forEach((elm) => {
+    positionResult.forEach((elm, inx) => {
+        if (inx === 0) {
+            
+            let option = document.createElement('option');
+            let node = document.createTextNode('პოზიცია');
+
+            option.value = 'პოზიცია';
+            option.disabled = true;
+            option.selected = true;
+            option.hidden = true;
+            
+            option.appendChild(node);
+            position.appendChild(option);
+
+        }
 
         if (teamId === elm.team_id) {
 
@@ -96,7 +157,6 @@ const filterPositionsData = () => {
             position.appendChild(option);
         }
     })
-
 }
 
 
@@ -135,7 +195,7 @@ const showLaptopInfo = () => {
     })
 
     nextBtnBackgroundContainer?.addEventListener('click', () => {
-       
+
         window.location.href = './info-page.html';
 
         employeeInfo.style.display = 'none';
