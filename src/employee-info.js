@@ -74,7 +74,7 @@ const filterPositionsData = () => {
     l('some')
 
     teamResult?.forEach(el => {
-    l('some')
+        l('some')
         for (let i = 1; i < position.children.length; i++) {
             position.children[i].remove();
         }
@@ -121,6 +121,9 @@ const filterPositionsData = () => {
 
 const showLaptopInfo = () => {
     nextBtn?.addEventListener('click', () => {
+
+        window.location.href = './info-page.html';
+
         employeeInfo.style.display = 'none';
         laptopInfo.style.display = 'flex';
 
@@ -132,6 +135,9 @@ const showLaptopInfo = () => {
     })
 
     nextBtnBackgroundContainer?.addEventListener('click', () => {
+       
+        window.location.href = './info-page.html';
+
         employeeInfo.style.display = 'none';
         laptopInfo.style.display = 'flex';
 

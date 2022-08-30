@@ -84,6 +84,9 @@ changePageHelper();
 
 const showEmployeeInfo = () => {
     goBackBtn?.addEventListener('click', () => {
+      
+        window.location.href = './info-page.html';
+        
         laptopInfo.style.display = 'none';
         employeeInfo.style.display = 'flex';
 
