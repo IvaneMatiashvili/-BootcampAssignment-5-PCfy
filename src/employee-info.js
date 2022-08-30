@@ -32,13 +32,14 @@ async function getTeamsData() {
     })
 
     team.addEventListener('input', (e) => {
-
-        teamResult?.forEach(el => {
-            if (e.target.value === el.name) {
-                teamId = el.id;
-            }
-        })
+        localStorage.setItem('team', `${team.value}`);
     })
+
+    if (localStorage.getItem('team')) {
+
+        team.value = localStorage.getItem('team');
+        position.disabled = false;
+    }
 }
 getTeamsData();
 
@@ -56,39 +57,44 @@ async function getPositionData() {
 
     filterPositionsData();
 
+    team.addEventListener('input', (e) => {
+
+        filterPositionsData();
+
+    })
+
 }
 
 getPositionData();
 
 const filterPositionsData = () => {
+
     let teamId = 0;
-    team.addEventListener('input', (e) => {
+    position.disabled = false;
+    l('some')
 
-        position.disabled = false;
+    teamResult?.forEach(el => {
+    l('some')
+        for (let i = 1; i < position.children.length; i++) {
+            position.children[i].remove();
+        }
 
-        teamResult?.forEach(el => {
-            for (let i = 1; i < position.children.length; i++) {
-                position.children[i].remove();
-            }
+        if (team.value === el.name) {
+            teamId = el.id;
+        }
+    })
 
-            if (e.target.value === el.name) {
-                teamId = el.id;
-            }
-        })
+    positionResult.forEach((elm) => {
 
-        positionResult.forEach((elm) => {
+        if (teamId === elm.team_id) {
 
-            if (teamId === elm.team_id) {
+            let option = document.createElement('option');
+            let node = document.createTextNode(elm.name);
 
-                let option = document.createElement('option');
-                let node = document.createTextNode(elm.name);
-
-                option.value = elm.name;
-                option.appendChild(node);
-                position.appendChild(option);
-            }
-        })
-
+            option.value = elm.name;
+            option.appendChild(node);
+            position.appendChild(option);
+        }
     })
 
 }
