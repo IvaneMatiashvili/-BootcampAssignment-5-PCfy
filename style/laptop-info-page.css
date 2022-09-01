@@ -378,6 +378,7 @@
 }
 
 .info-page .laptop-info .input-label-container input[type=radio] {
+    border-color: #FFFFFF;
     width: 1.5rem;
     box-shadow: none;
     margin-top: 0.5rem;
@@ -388,11 +389,12 @@
     -ms-user-select: none !important;
     user-select: none !important;
     appearance: none;
-    background: url(../icon/radio-btn.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    border-color: #FFFFFF;
+    background: url(../icon/radio-btn.png) center center no-repeat;
+}
+
+.info-page .laptop-info .input-label-container .checked {
+    
+    background: url(../icon/radio-btn.png) center center no-repeat, url(../icon/checked-radio-button.png) center center no-repeat !important;
 }
 
 .info-page .laptop-info .purchase-number {
