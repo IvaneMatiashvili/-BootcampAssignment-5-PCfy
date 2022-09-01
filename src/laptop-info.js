@@ -8,15 +8,32 @@ let imageInput = document.querySelector('.upload-img');
 const imgFormContainer = document.querySelector('.img-form-container');
 const imgForm = document.querySelector('.img-form');
 
+const laptopNameLabel = document.querySelector('.laptop-name-label');
+const laptopName = document.querySelector('.laptop-name');
+
 const selectBoxLaptopBrand = document.querySelector('.select-box-laptop-brand');
 const selectBoxCPU = document.querySelector('.select-box-CPU');
 
 const laptopBrandName = document.querySelector('.laptop-brand-name');
 const CPUName = document.querySelector('.CPU-name');
 
-
 const laptopBrand = document.querySelector('.laptop-brand');
 const CPUOptionContainer = document.querySelector('.CPU-option-container');
+
+const cpuCoreLabel = document.querySelector('.cpu-core-label');
+const cpuThreadLabel = document.querySelector('.cpu-thread-label');
+
+const cpuCore = document.querySelector('.cpu-core');
+const cpuThread = document.querySelector('.cpu-thread');
+
+const laptopRamLabel = document.querySelector('.ram-label');
+const laptopRam = document.querySelector('.laptop-ram');
+
+const purchaseNumberLabel = document.querySelector('.purchase-number-label');
+const laptopPriceLabel = document.querySelector('.laptop-price-label');
+
+const purchaseNumber = document.querySelector('.purchase-number');
+const laptopPrice = document.querySelector('.laptop-price');
 
 const onBlurSelectLaptopBrand = document.querySelector('.on-blur-select-laptop-brand');
 const onBlurSelectCPU = document.querySelector('.on-blur-select-CPU');
@@ -26,6 +43,109 @@ const submitContainer = document.querySelector('.submit-container');
 
 
 const { log: l } = console;
+
+
+
+const laptopInfoPageLocalStorage = () => {
+
+    laptopName.addEventListener('input', () => {
+        localStorage.setItem("laptop-name", `${laptopName.value.trim()}`);
+    });
+
+    if (localStorage.getItem("laptop-name")) {
+
+        laptopName.value = localStorage.getItem("laptop-name");
+    }
+
+    laptopRam.addEventListener('input', () => {
+        localStorage.setItem("laptop-ram", `${laptopRam.value.trim()}`);
+
+    });
+
+    if (localStorage.getItem("laptop-ram")) {
+
+        laptopRam.value = localStorage.getItem("laptop-ram");
+    }
+
+    cpuCore.addEventListener('input', () => {
+        localStorage.setItem("cpu-core", `${cpuCore.value.trim()}`);
+
+    });
+
+    if (localStorage.getItem("cpu-core")) {
+
+        cpuCore.value = localStorage.getItem("cpu-core");
+    }
+
+    cpuThread.addEventListener('input', () => {
+        localStorage.setItem("cpu-thread", `${cpuThread.value.trim()}`);
+
+    });
+
+    if (localStorage.getItem("cpu-thread")) {
+
+        cpuThread.value = localStorage.getItem("cpu-thread");
+    }
+
+    purchaseNumber.addEventListener('input', () => {
+        localStorage.setItem("purchase-number", `${purchaseNumber.value.trim()}`);
+
+    });
+
+    if (localStorage.getItem("purchase-number")) {
+
+        purchaseNumber.value = localStorage.getItem("purchase-number");
+    }
+
+    laptopPrice.addEventListener('input', () => {
+        localStorage.setItem("laptop-price", `${laptopPrice.value.trim()}`);
+
+    });
+
+    if (localStorage.getItem("laptop-price")) {
+
+        laptopPrice.value = localStorage.getItem("laptop-price");
+    }
+
+
+}
+
+laptopInfoPageLocalStorage();
+
+
+const addFocusWithLabel = () => {
+    laptopNameLabel.addEventListener('click', () => {
+        laptopName.focus();
+    });
+
+
+    laptopRamLabel.addEventListener('click', () => {
+        laptopRam.focus();
+    });
+
+
+    cpuCoreLabel.addEventListener('click', () => {
+        cpuCore.focus();
+    });
+
+
+    cpuThreadLabel.addEventListener('click', () => {
+        cpuThread.focus()
+    });
+
+
+    purchaseNumberLabel.addEventListener('click', () => {
+        purchaseNumber.focus();
+    });
+
+
+    laptopPriceLabel.addEventListener('click', () => {
+        laptopPrice.focus();
+    });
+}
+
+addFocusWithLabel();
+
 
 
 

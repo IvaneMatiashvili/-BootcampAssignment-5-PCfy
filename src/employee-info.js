@@ -4,6 +4,11 @@ const laptopInfo = document.querySelector('.laptop-info');
 const employeeLine = document.querySelector('.employee-line');
 const laptopLine = document.querySelector('.laptop-line');
 
+const firstNameLabel = document.querySelector('.first-name-label');
+const lastNameLabel = document.querySelector('.last-name-label');
+
+const firstName = document.querySelector('.first-name');
+const lastName = document.querySelector('.last-name');
 
 const selectBoxTeam = document.querySelector('.select-box-team');
 const selectBoxPosition = document.querySelector('.select-box-position');
@@ -18,6 +23,12 @@ const position = document.querySelector('.position');
 const onBlurSelectTeam = document.querySelector('.on-blur-select-team');
 const onBlurSelectPosition = document.querySelector('.on-blur-select-position');
 
+const emailLabel = document.querySelector('.email-label');
+const phoneLabel = document.querySelector('.phone-label');
+
+const email = document.querySelector('.email');
+const phone = document.querySelector('.phone');
+
 
 const nextBtnBackgroundContainer = document.querySelector('.next-btn-background-container');
 const nextBtn = document.querySelector('.next-btn');
@@ -25,9 +36,90 @@ const nextBtn = document.querySelector('.next-btn');
 const { log: l } = console;
 
 
+
+const employeeInfoPageLocalStorage = () => {
+
+    firstName.addEventListener('input', () => {
+        localStorage.setItem("first-name", `${firstName.value.trim()}`);
+    });
+
+    if (localStorage.getItem("first-name")) {
+
+        firstName.value = localStorage.getItem("first-name");
+    }
+
+
+    lastName.addEventListener('input', () => {
+        localStorage.setItem("last-name", `${lastName.value.trim()}`);
+
+    });
+    if (localStorage.getItem("last-name")) {
+
+        lastName.value = localStorage.getItem("last-name");
+    }
+
+
+    email.addEventListener('input', () => {
+        localStorage.setItem("email", `${email.value.trim()}`);
+
+    });
+
+    if (localStorage.getItem("email")) {
+
+        email.value = localStorage.getItem("email");
+    }
+
+    phone.addEventListener('input', () => {
+        localStorage.setItem("phone", `${phone.value.trim()}`);
+
+    });
+
+    if (localStorage.getItem("phone")) {
+
+        phone.value = localStorage.getItem("phone");
+    }
+
+}
+
+employeeInfoPageLocalStorage();
+
+
+
+const addFocusWithLabel = () => {
+    firstNameLabel.addEventListener('click', () => {
+        firstName.focus();
+    })
+    
+    lastNameLabel.addEventListener('click', () => {
+        lastName.focus();
+    })
+    
+    emailLabel.addEventListener('click', () => {
+        email.focus();
+    })
+    
+    phoneLabel.addEventListener('click', () => {
+        phone.focus();
+    })
+}
+
+addFocusWithLabel();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let teamResult = new Array();
 let teamId = 0;
-
 
 
 const selectBoxGenerator = () => {
