@@ -4,6 +4,7 @@ const laptopInfo = document.querySelector('.laptop-info');
 const employeeLine = document.querySelector('.employee-line');
 const laptopLine = document.querySelector('.laptop-line');
 
+
 const selectBoxTeam = document.querySelector('.select-box-team');
 const selectBoxPosition = document.querySelector('.select-box-position');
 
@@ -14,7 +15,8 @@ const positionName = document.querySelector('.position-name');
 const team = document.querySelector('.team');
 const position = document.querySelector('.position');
 
-const onBlurSelectTeam = document.querySelectorAll('.on-blur-select-team');
+const onBlurSelectTeam = document.querySelector('.on-blur-select-team');
+const onBlurSelectPosition = document.querySelector('.on-blur-select-position');
 
 
 const nextBtnBackgroundContainer = document.querySelector('.next-btn-background-container');
@@ -25,7 +27,7 @@ const { log: l } = console;
 
 let teamResult = new Array();
 let teamId = 0;
-//localStorage.clear()
+
 
 
 const selectBoxGenerator = () => {
@@ -34,36 +36,48 @@ const selectBoxGenerator = () => {
     localStorage.setItem('team-select-box-click-counter', '0');
     let teamSelectBoxClickCounter = localStorage.getItem('team-select-box-click-counter');
 
-    selectOptionGenerator(team, selectBoxTeam, teamSelectBoxClickCounter, onBlurSelectTeam);
+    let teamSiblingElement = selectBoxPosition;
+    selectOptionGenerator(team, selectBoxTeam, teamSelectBoxClickCounter, onBlurSelectTeam, teamSiblingElement);
 
+    if (localStorage.getItem('team-name')) {
+        position.style.display = 'none';
 
-    //selectOptionGenerator(position, selectBoxPosition);
+        localStorage.setItem('position-select-box-click-counter', '0');
+        let positionSelectBoxClickCounter = localStorage.getItem('position-select-box-click-counter');
+
+        let positionSiblingElement = selectBoxTeam;
+        selectOptionGenerator(position, selectBoxPosition, positionSelectBoxClickCounter, onBlurSelectPosition, positionSiblingElement);
+
+        positionName.classList.remove('disabled-name');
+    }
+
 }
 
 
 
-const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, customOnBlur) => {
+const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, customOnBlur, siblingElement) => {
+
+    siblingElement.style.position = 'static';
 
     let boxClickCounter = +selectBoxClickCounter;
 
 
     selectBoxName.addEventListener('click', () => {
-        team.style.display = 'flex';
+        selectBox.style.display = 'flex';
 
         if (boxClickCounter % 2 === 1) {
             selectBox.style.display = 'none';
+            customOnBlur.style.display = 'none';
 
-            customOnBlur?.forEach(elm => {
-                elm.style.display = 'none';
-            })
-
+            selectBoxName.style.position = 'static';
+            siblingElement.style.position = 'static';
 
         } else {
             selectBox.style.display = 'flex';
+            customOnBlur.style.display = 'flex';
 
-            customOnBlur?.forEach(elm => {
-                elm.style.display = 'flex';
-            })
+            selectBoxName.style.position = 'relative';
+            siblingElement.style.position = 'static';
 
         }
         boxClickCounter++;
@@ -71,17 +85,16 @@ const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, 
 
     })
 
-    customOnBlur?.forEach(el => {
 
-        el.addEventListener('click', () => {
+    customOnBlur?.addEventListener('click', () => {
 
-            selectBox.style.display = 'none';
-            boxClickCounter--;
-            customOnBlur?.forEach(elm => {
-                elm.style.display = 'none';
-            })
+        selectBox.style.display = 'none';
+        boxClickCounter--;
+        customOnBlur.style.display = 'none';
 
-        })
+        selectBoxName.style.position = 'static';
+        siblingElement.style.position = 'static';
+
     })
 
 
@@ -91,7 +104,7 @@ const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, 
 
 selectBoxGenerator();
 
-//localStorage.clear()
+localStorage.clear()
 
 async function getTeamsData() {
 
@@ -113,10 +126,10 @@ async function getTeamsData() {
             localStorage.setItem('team-select-box-click-counter', '0');
 
             let teamSelectBoxClickCounter = localStorage.getItem('team-select-box-click-counter');
-            onBlurSelectTeam?.forEach(elm => {
-                elm.style.display = 'none';
-            })
-            selectOptionGenerator(team, selectBoxTeam, teamSelectBoxClickCounter, onBlurSelectTeam);
+            onBlurSelectTeam.style.display = 'none';
+
+            let teamSiblingElement = selectBoxPosition;
+            selectOptionGenerator(team, selectBoxTeam, teamSelectBoxClickCounter, onBlurSelectTeam, teamSiblingElement);
 
 
 
@@ -126,6 +139,21 @@ async function getTeamsData() {
 
             localStorage.setItem('team-name', teamName.textContent.trim());
             localStorage.setItem('team-id', `${elm.id}`);
+
+            positionName.textContent = 'პოზიცია';
+            localStorage.setItem('position-name', 'პოზიცია');
+
+            if (localStorage.getItem('team-name')) {
+                position.style.display = 'none';
+
+                localStorage.setItem('position-select-box-click-counter', '0');
+                let positionSelectBoxClickCounter = localStorage.getItem('position-select-box-click-counter');
+
+                let positionSiblingElement = selectBoxTeam;
+                selectOptionGenerator(position, selectBoxPosition, positionSelectBoxClickCounter, onBlurSelectPosition, positionSiblingElement);
+
+                positionName.classList.remove('disabled-name');
+            }
 
         })
 
@@ -192,8 +220,16 @@ async function getPositionData() {
                     position.style.display = 'none';
                     positionName.textContent = elm.name;
 
+                    localStorage.setItem('position-select-box-click-counter', '0');
 
-                    localStorage.setItem('position-name', teamName.textContent.trim());
+                    let positionSelectBoxClickCounter = localStorage.getItem('position-select-box-click-counter');
+                    onBlurSelectPosition.style.display = 'none';
+
+                    let positionSiblingElement = selectBoxTeam;
+                    selectOptionGenerator(position, selectBoxPosition, positionSelectBoxClickCounter, onBlurSelectPosition, positionSiblingElement);
+
+
+                    localStorage.setItem('position-name', positionName.textContent.trim());
                 })
             }
 
@@ -201,6 +237,10 @@ async function getPositionData() {
     })
 
 
+    if (localStorage.getItem('position-name')) {
+
+        positionName.textContent = localStorage.getItem('position-name');
+    }
 
 }
 
