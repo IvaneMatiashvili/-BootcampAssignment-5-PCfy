@@ -4,8 +4,18 @@ const laptopInfo = document.querySelector('.laptop-info');
 const employeeLine = document.querySelector('.employee-line');
 const laptopLine = document.querySelector('.laptop-line');
 
+const selectBoxTeam = document.querySelector('.select-box-team');
+const selectBoxPosition = document.querySelector('.select-box-position');
+
+const teamName = document.querySelector('.team-name');
+const positionName = document.querySelector('.position-name');
+
+
 const team = document.querySelector('.team');
 const position = document.querySelector('.position');
+
+const onBlurSelectTeam = document.querySelectorAll('.on-blur-select-team');
+
 
 const nextBtnBackgroundContainer = document.querySelector('.next-btn-background-container');
 const nextBtn = document.querySelector('.next-btn');
@@ -15,7 +25,73 @@ const { log: l } = console;
 
 let teamResult = new Array();
 let teamId = 0;
+//localStorage.clear()
 
+
+const selectBoxGenerator = () => {
+    team.style.display = 'none';
+
+    localStorage.setItem('team-select-box-click-counter', '0');
+    let teamSelectBoxClickCounter = localStorage.getItem('team-select-box-click-counter');
+
+    selectOptionGenerator(team, selectBoxTeam, teamSelectBoxClickCounter, onBlurSelectTeam);
+
+
+    //selectOptionGenerator(position, selectBoxPosition);
+}
+
+
+
+const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, customOnBlur) => {
+
+    let boxClickCounter = +selectBoxClickCounter;
+
+
+    selectBoxName.addEventListener('click', () => {
+        team.style.display = 'flex';
+
+        if (boxClickCounter % 2 === 1) {
+            selectBox.style.display = 'none';
+
+            customOnBlur?.forEach(elm => {
+                elm.style.display = 'none';
+            })
+
+
+        } else {
+            selectBox.style.display = 'flex';
+
+            customOnBlur?.forEach(elm => {
+                elm.style.display = 'flex';
+            })
+
+        }
+        boxClickCounter++;
+
+
+    })
+
+    customOnBlur?.forEach(el => {
+
+        el.addEventListener('click', () => {
+
+            selectBox.style.display = 'none';
+            boxClickCounter--;
+            customOnBlur?.forEach(elm => {
+                elm.style.display = 'none';
+            })
+
+        })
+    })
+
+
+}
+
+
+
+selectBoxGenerator();
+
+//localStorage.clear()
 
 async function getTeamsData() {
 
@@ -24,14 +100,44 @@ async function getTeamsData() {
     teamResult = responseData.data;
 
     teamResult?.forEach((elm) => {
-        let option = document.createElement('option');
+        let div = document.createElement('div');
+        div.classList.add('custom-option');
         let node = document.createTextNode(elm.name);
 
-        option.value = elm.name;
-        option.appendChild(node);
-        team.appendChild(option);
+
+        div.appendChild(node);
+        team.appendChild(div);
+
+        div?.addEventListener('click', () => {
+            team.style.display = 'none';
+            localStorage.setItem('team-select-box-click-counter', '0');
+
+            let teamSelectBoxClickCounter = localStorage.getItem('team-select-box-click-counter');
+            onBlurSelectTeam?.forEach(elm => {
+                elm.style.display = 'none';
+            })
+            selectOptionGenerator(team, selectBoxTeam, teamSelectBoxClickCounter, onBlurSelectTeam);
+
+
+
+            teamName.textContent = elm.name;
+
+            localStorage.setItem('team-open', 'YES');
+
+            localStorage.setItem('team-name', teamName.textContent.trim());
+            localStorage.setItem('team-id', `${elm.id}`);
+
+        })
+
     })
 
+    if (localStorage.getItem('team-name')) {
+
+        teamName.textContent = localStorage.getItem('team-name');
+    }
+
+    /*
+ 
     team.addEventListener('input', (e) => {
         localStorage.setItem('team', `${team.value}`);
         teamResult?.forEach((el) => {
@@ -39,17 +145,17 @@ async function getTeamsData() {
                 localStorage.setItem('team-id', `${el.id}`);
             }
         })
+ 
+ 
     })
-
-    if (localStorage.getItem('team')) {
-
-        team.value = localStorage.getItem('team');
-        position.disabled = false;
-    }
+ 
+    */
 }
 getTeamsData();
+selectBoxPosition.addEventListener('click', (e) => {
 
-
+    filterPositionsData();
+})
 
 
 let positionResult = new Array();
@@ -60,103 +166,59 @@ async function getPositionData() {
     const responseData = await response.json();
     positionResult = responseData.data;
 
-
-    positionResult.forEach((elm,inx) => {
-        if (inx === 0) {
-
-            let option = document.createElement('option');
-            let node = document.createTextNode('პოზიცია');
-
-            option.value = 'პოზიცია';
-            option.disabled = true;
-            option.selected = true;
-            option.hidden = true;
-
-            option.appendChild(node);
-            position.appendChild(option);
-
-        }
-
-        if (+localStorage.getItem('team-id') === elm.team_id) {
-
-            let option = document.createElement('option');
-            let node = document.createTextNode(elm.name);
-
-            option.value = elm.name;
-            option.appendChild(node);
-            position.appendChild(option);
-        }
-    })
-
-    team.addEventListener('input', (e) => {
+    selectBoxPosition.addEventListener('click', (e) => {
 
         filterPositionsData();
-        localStorage.setItem('position', `${position.value}`);
-
     })
 
-
-    position.addEventListener('input', (e) => {
-        localStorage.setItem('position', `${position.value}`);
-    })
-
-
-    if (localStorage.getItem('position')) {
-        position.value = localStorage.getItem('position');
-        position.disabled = false;
-    }
-
-
-}
-
-getPositionData();
-
-
-
-const filterPositionsData = () => {
-
-    let teamId = 0;
-    position.disabled = false;
-
-
-
-    teamResult?.forEach(el => {
-        for (let i = 1; i < position.children.length; i++) {
-            position.children[i].remove();
-        }
-
-        if (team.value === el.name) {
-            teamId = el.id;
-        }
-    })
 
     positionResult.forEach((elm, inx) => {
         if (inx === 0) {
-            
-            let option = document.createElement('option');
-            let node = document.createTextNode('პოზიცია');
 
-            option.value = 'პოზიცია';
-            option.disabled = true;
-            option.selected = true;
-            option.hidden = true;
-            
-            option.appendChild(node);
-            position.appendChild(option);
-
+            positionName.textContent = 'პოზიცია';
         }
 
-        if (teamId === elm.team_id) {
+        selectBoxPosition.addEventListener('click', (e) => {
+            if (+localStorage.getItem('team-id') === elm.team_id) {
 
-            let option = document.createElement('option');
-            let node = document.createTextNode(elm.name);
+                let div = document.createElement('div');
+                div.classList.add('custom-option');
+                let node = document.createTextNode(elm.name);
 
-            option.value = elm.name;
-            option.appendChild(node);
-            position.appendChild(option);
-        }
+                div.appendChild(node);
+                position.appendChild(div);
+
+                div?.addEventListener('click', () => {
+                    position.style.display = 'none';
+                    positionName.textContent = elm.name;
+
+
+                    localStorage.setItem('position-name', teamName.textContent.trim());
+                })
+            }
+
+        })
     })
+
+
+
 }
+
+
+
+getPositionData();
+
+selectBoxPosition.addEventListener('click', (e) => {
+
+    filterPositionsData();
+})
+const filterPositionsData = () => {
+    for (let i = 0; i < position.children.length; i++) {
+        position.children[i].remove();
+    }
+
+}
+
 
 
 

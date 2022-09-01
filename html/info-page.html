@@ -90,18 +90,27 @@
                         <ul class="form-control ">
                             <li class="select-box-list">
                                 <ul class="select-box-container">
-                                    <li class="select-box">
-                                        <select name="team" class="team select">
-                                            <option value="" disabled selected hidden>თიმი <span class="go-back">
-                                            </option>
-                                        </select>
+                                    <li class="select-box select-box-team">
+                                        <p class="team-name">
+                                            თიმი
+                                        </p>
                                     </li>
+                                    <li class="custom-option-container team" tabindex="1">
 
-                                    <li class="select-box">
-                                        <select name="position" class="position select" disabled>
-                                            <option value="" disabled selected hidden>პოზიცია <span class="go-back">
-                                            </option>
-                                        </select>
+                                    </li>
+                                    <div class="team-custom-on-blur-top on-blur-select-team"></div>
+                                    <div class="team-custom-on-blur-left on-blur-select-team"></div>
+                                    <div class="team-custom-on-blur-bottom on-blur-select-team"></div>
+                                    <div class="team-custom-on-blur-right on-blur-select-team"></div>
+
+                                    <li class="select-box select-box-position">
+                                        <p class="position-name">
+                                            პოზიცია
+                                        </p>
+
+                                    </li>
+                                    <li class="custom-option-container position" tabindex="1">
+
                                     </li>
 
                                 </ul>
@@ -167,8 +176,8 @@
                                         </p>
                                     </li>
                                     <li class="file-upload-container">
-                                        <input type="file" class="upload-img" id="upload-img" title="no file chosen" name="upload-img"
-                                            accept="image/*">
+                                        <input type="file" class="upload-img" id="upload-img" title="no file chosen"
+                                            name="upload-img" accept="image/*">
                                         <div class="label-container">
                                             <label for="upload-img" class="label-upload-img">ატვირთე</label>
                                         </div>
