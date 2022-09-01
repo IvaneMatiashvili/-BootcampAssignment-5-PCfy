@@ -179,6 +179,11 @@ select:hover {
     background-repeat: no-repeat;
     background-position: 98%;
     cursor: pointer;
+    z-index: 99;
+}
+
+.info-page .employee-info .form-control .position-select-box-disabled .disabled-name {
+    color: #929191 !important;
 }
 
 .info-page .employee-info .form-control select {
@@ -237,51 +242,34 @@ select:hover {
     color: #000000;
     padding: 0.5rem;
     padding-left: 2rem;
+    cursor: pointer;
 }
 
 .info-page .employee-info .custom-option:hover {
     background: #E7F0F8;
 }
 
-.info-page .employee-info .team-custom-on-blur-top {
+.info-page .employee-info .team-custom-on-blur {
     width: 100%;
-    height: 47%;
+    height: 100%;
     position: absolute;
     right: 0%;
     top: 0%;
-    background-color: black;
+    background-color: transparent;
     display: none;
 }
 
-.info-page .employee-info .team-custom-on-blur-bottom {
+
+.info-page .employee-info .position-custom-on-blur {
     width: 100%;
-    height: 47%;
+    height: 100%;
     position: absolute;
     right: 0%;
-    bottom: 0%;
-    background-color: black;
+    top: 0%;
+    background-color: transparent;
     display: none;
 }
 
-.info-page .employee-info .team-custom-on-blur-left {
-    width: 24.3%;
-    height: 60%;
-    position: absolute;
-    right: 0%;
-    bottom: 0%;
-    background-color: black;
-    display: none;
-}
-
-.info-page .employee-info .team-custom-on-blur-right {
-    width: 30%;
-    height: 60%;
-    position: absolute;
-    left: 0%;
-    bottom: 0%;
-    background-color: black;
-    display: none;
-}
 
 .info-page .employee-info .input-control {
     display: flex;
