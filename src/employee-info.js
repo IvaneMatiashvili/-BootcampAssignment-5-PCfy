@@ -104,7 +104,6 @@ const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, 
 
 selectBoxGenerator();
 
-localStorage.clear()
 
 async function getTeamsData() {
 
@@ -164,22 +163,9 @@ async function getTeamsData() {
         teamName.textContent = localStorage.getItem('team-name');
     }
 
-    /*
- 
-    team.addEventListener('input', (e) => {
-        localStorage.setItem('team', `${team.value}`);
-        teamResult?.forEach((el) => {
-            if (el.name === team.value) {
-                localStorage.setItem('team-id', `${el.id}`);
-            }
-        })
- 
- 
-    })
- 
-    */
 }
 getTeamsData();
+
 selectBoxPosition.addEventListener('click', (e) => {
 
     filterPositionsData();
@@ -252,6 +238,7 @@ selectBoxPosition.addEventListener('click', (e) => {
 
     filterPositionsData();
 })
+
 const filterPositionsData = () => {
     for (let i = 0; i < position.children.length; i++) {
         position.children[i].remove();
