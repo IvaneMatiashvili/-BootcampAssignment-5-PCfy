@@ -127,6 +127,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     color: #000000;
+    cursor: pointer !important;
 }
 
 .info-page .employee-info .inline-form li .validation-error {
@@ -295,6 +296,7 @@ select:hover {
     font-weight: 500;
     font-size: 1.1rem;
     color: #000000;
+    cursor: pointer;
 }
 
 .info-page .employee-info .input-control li .validation-error {
