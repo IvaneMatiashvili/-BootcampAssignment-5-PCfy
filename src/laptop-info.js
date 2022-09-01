@@ -29,6 +29,8 @@ const cpuThread = document.querySelector('.cpu-thread');
 const laptopRamLabel = document.querySelector('.ram-label');
 const laptopRam = document.querySelector('.laptop-ram');
 
+const memoryType = document.querySelectorAll('.memory-type');
+
 const purchaseNumberLabel = document.querySelector('.purchase-number-label');
 const laptopPriceLabel = document.querySelector('.laptop-price-label');
 
@@ -37,6 +39,8 @@ const laptopPrice = document.querySelector('.laptop-price');
 
 const onBlurSelectLaptopBrand = document.querySelector('.on-blur-select-laptop-brand');
 const onBlurSelectCPU = document.querySelector('.on-blur-select-CPU');
+
+const laptopStatus = document.querySelectorAll('.laptop-status');
 
 const goBackBtn = document.querySelector('.go-back-btn');
 const submitContainer = document.querySelector('.submit-container');
@@ -319,17 +323,33 @@ getCPUData();
 
 
 
+const checkOrNot = (element, name) => {
+    element.forEach((el, inx) => {
+        if (localStorage.getItem(`${name}`)) {
+            if (el.value === localStorage.getItem(`${name}`)) {
+                el.value.checked === true;
+                el.classList.add('checked');
+            }
+        }
+        el.addEventListener('input', (e) => {
+            if (el.checked === true) {
+                localStorage.setItem(`${name}`, `${el.value}`);
+                el.classList.add('checked');
+            }
+            if (inx === 0) {
+                element[1].classList.remove('checked');
+            } else {
+                element[0].classList.remove('checked');
+
+            }
+        })
+
+    })
+}
 
 
-
-
-
-
-
-
-
-
-
+checkOrNot(memoryType, 'memory-type');
+checkOrNot(laptopStatus, 'laptop-status');
 
 
 
