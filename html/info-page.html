@@ -47,14 +47,13 @@
                             <li>
                                 <ul class="inline-form">
                                     <li>
-                                        <p class="first-name-label">
+                                        <p class="first-name-label label-array">
                                             სახელი
                                         </p>
                                     </li>
 
                                     <li>
-                                        <input type="text" class="first-name error" name="first-name"
-                                            placeholder="გრიშა" value="">
+                                        <input type="text" class="first-name" name="name" placeholder="გრიშა" value="">
                                     </li>
 
                                     <li>
@@ -66,15 +65,15 @@
                             <li>
                                 <ul class="inline-form">
                                     <li>
-                                        <p class="last-name-label">
+                                        <p class="last-name-label label-array">
                                             გვარი
                                         </p>
                                     </li>
 
                                     <li>
 
-                                        <input type="text" class="last-name error" name="last-name"
-                                            placeholder="ბაგრატიონი" value="">
+                                        <input type="text" class="last-name" name="name" placeholder="ბაგრატიონი"
+                                            value="">
                                     </li>
 
                                     <li>
@@ -117,30 +116,30 @@
                         <ul class="form-control input-control">
                             <li>
 
-                                <p class="email-label">
+                                <p class="email-label label-array">
                                     მეილი
                                 </p>
                             </li>
 
                             <li>
-                                <input type="email" class="email error" name="email" placeholder="grish666@redberry.ge"
+                                <input type="email" class="email" name="email" placeholder="grish666@redberry.ge"
                                     value="">
                             </li>
                             <li>
-                                <div class="first-error validation-error">უნდა მთავრდებოდეს @redberry.ge-ით</div>
+                                <div class="first-error validation-error ">უნდა მთავრდებოდეს @redberry.ge-ით</div>
                             </li>
                         </ul>
 
                         <ul class="form-control input-control">
                             <li>
 
-                                <p class="phone-label">
+                                <p class="phone-label label-array">
                                     ტელეფონის ნომერი
                                 </p>
                             </li>
 
                             <li>
-                                <input type="tel" class="phone error" name="phone" placeholder="+995 598 00 07 01"
+                                <input type="tel" class="phone" name="phone" placeholder="+995 598 00 07 01"
                                     minlength="5" value="">
                             </li>
                             <li>
@@ -161,15 +160,16 @@
                         <ul class="img-form-container">
                             <li class="img-form">
                                 <ul class="add-img-container">
-                                    <li>
+                                    <li class="img-error-icon-container">
+                                        <div class="img-error-icon"></div>
                                     </li>
                                     <li class="choose-img">
-                                        <p>
+                                        <p class="img-label">
                                             ჩააგდე ან ატვირთე
                                         </p>
                                     </li>
                                     <li class="choose-img">
-                                        <p>
+                                        <p class="img-label">
                                             ლეპტოპის ფოტო
                                         </p>
                                     </li>
@@ -189,18 +189,18 @@
                             <li>
                                 <ul class="inline-form">
                                     <li>
-                                        <p class="laptop-name-label">
+                                        <p class="laptop-name-label laptop-page-label-error">
                                             ლეპტოპის სახელი
                                         </p>
 
                                     </li>
                                     <li>
-                                        <input type="text" class="laptop-name error" name="laptop-name"
+                                        <input type="text" class="laptop-name" name="laptop-name"
                                             placeholder="HP " value="">
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error">ლათინური ასოები, ციფრები,
+                                        <div class="first-error validation-error laptop-info-validation-error">ლათინური ასოები, ციფრები,
                                             !@#$%^&*()_+= </div>
 
                                     </li>
@@ -256,19 +256,19 @@
                             <li class="cpu-info">
                                 <ul class="inline-form cpu-info-list">
                                     <li>
-                                        <p class="cpu-core-label">
+                                        <p class="cpu-core-label laptop-page-label-error">
                                             CPU-ს ბირთვი
 
                                         </p>
 
                                     </li>
                                     <li>
-                                        <input type="text" class="cpu-core error" name="cpu-core" placeholder="14"
+                                        <input type="text" class="cpu-core" name="cpu-core" placeholder="14"
                                             value="">
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
 
                                     </li>
                                 </ul>
@@ -277,18 +277,18 @@
                             <li class="cpu-info">
                                 <ul class="inline-form cpu-info-list">
                                     <li>
-                                        <p class="cpu-thread-label">
+                                        <p class="cpu-thread-label laptop-page-label-error">
                                             CPU-ს ნაკადი
                                         </p>
 
                                     </li>
                                     <li>
-                                        <input type="text" class="cpu-thread error" name="cpu-thread" placeholder="365"
+                                        <input type="text" class="cpu-thread" name="cpu-thread" placeholder="365"
                                             value="">
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
 
                                     </li>
                                 </ul>
@@ -298,27 +298,28 @@
                             <li>
                                 <ul class="inline-form">
                                     <li>
-                                        <p class="ram-label">
+                                        <p class="ram-label laptop-page-label-error">
                                             ლეპტოპის RAM (GB)
                                         </p>
                                     </li>
 
                                     <li>
-                                        <input type="text" class="laptop-ram error" name="laptop-ram" placeholder="16"
+                                        <input type="text" class="laptop-ram" name="laptop-ram" placeholder="16"
                                             value="">
                                     </li>
 
                                     <li>
-                                        <div class="first-error validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
                                     </li>
                                 </ul>
                             </li>
                             <li>
                                 <ul class="inline-form ram-and-memory">
-                                    <li>
-                                        <p>
+                                    <li class="error-and-label">
+                                        <p class="memory-type-label">
                                             მეხსიერების ტიპი
                                         </p>
+                                        <div class="memory-error-icon"></div>
                                     </li>
                                     <li>
                                         <div class="input-label-container">
@@ -348,7 +349,7 @@
 
                                     </li>
                                     <li>
-                                        <input type="text" class="purchase-number error" name="purchase-number"
+                                        <input type="text" class="purchase-number" name="purchase-number"
                                             placeholder="დდ / თთ / წწწწ" value=""
                                             onfocus="(this.type='date', this.showPicker())" onblur="this.type='text'">
 
@@ -358,18 +359,18 @@
                             <li>
                                 <ul class="inline-form">
                                     <li>
-                                        <p class="laptop-price-label">
+                                        <p class="laptop-price-label laptop-page-label-error">
                                             ლეპტოპის ფასი
                                         </p>
 
                                     </li>
                                     <li>
-                                        <input type="text" class="laptop-price error" name="laptop-price"
+                                        <input type="text" class="laptop-price" name="laptop-price"
                                             placeholder="0000" value="">
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
 
                                     </li>
                                 </ul>
@@ -381,10 +382,11 @@
 
                             <li>
                                 <ul class="inline-form laptop-status-form">
-                                    <li>
-                                        <p>
+                                    <li class="error-and-label">
+                                        <p class="laptop-status-label">
                                             ლეპტოპის მდგომარეობა
                                         </p>
+                                        <div class="laptop-status-error-icon"></div>
                                     </li>
                                     <li>
                                         <div class="input-label-container">
@@ -407,7 +409,7 @@
                                 <p class="go-back-btn">უკან</p>
                             </div>
                             <div class="next-btn-container submit-container">
-                                <a href="./successfully-add.html" class="next-btn">დამახსოვრება</a>
+                                <a class="next-btn">დამახსოვრება</a>
                             </div>
                         </div>
                     </form>
