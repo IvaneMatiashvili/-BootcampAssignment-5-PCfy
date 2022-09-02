@@ -50,11 +50,19 @@
     border-radius: 1.1rem;
     margin-left: 4rem;
     cursor: pointer;
-    background: url(../img/upload-file-borer.png);
+    background: url(../img/upload-file-borer.png) no-repeat;
     background-size: 100%;
     background-repeat: no-repeat;
     margin-bottom: 4rem;
     cursor: pointer;
+}
+
+.info-page .laptop-info .img-border-error {
+    width: 100%;
+    background: url(../icon/red-border.png) no-repeat !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-right: 6%;
 }
 
 .info-page .laptop-info .img-form {
@@ -80,6 +88,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.info-page .laptop-info .img-error-icon-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+}
+
+.info-page .laptop-info .img-error-icon {
+    width: 40%;
+    height: 20%;
+    background: url(../icon/img-error.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 55%;
+    display: none;
 }
 
 .info-page .laptop-info .add-img-container p {
@@ -177,6 +205,11 @@
     box-sizing: border-box;
 }
 
+.info-page .laptop-info .error {
+    border-color: #E52F2F !important;
+}
+
+
 .info-page .laptop-info .form-control .select-box-list {
     width: 100%;
     box-sizing: border-box;
@@ -202,6 +235,10 @@
     background-position: 95%;
     cursor: pointer;
     z-index: 99;
+}
+
+.info-page .laptop-info .form-control .select-box-error {
+    border: 2px solid #E52F2F !important;
 }
 
 .info-page .laptop-info .form-control select {
@@ -363,6 +400,31 @@
     justify-content: flex-start;
 }
 
+.info-page .laptop-info .error-and-label {
+    width: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.info-page .laptop-info .error-and-label p {
+    width: 67%;
+    cursor: default !important;
+    color: #000000;
+}
+
+.info-page .laptop-info .memory-error-icon {
+    width: 100%;
+    height: 2rem;
+    background: url(../icon/memory-error.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    position: absolute;
+    left: 62%;
+    display: none;
+}
+
 .info-page .laptop-info label {
     font: 15px 'Montserrat', sans-serif;
     margin: 0;
@@ -393,7 +455,7 @@
 }
 
 .info-page .laptop-info .input-label-container .checked {
-    
+
     background: url(../icon/radio-btn.png) center center no-repeat, url(../icon/checked-radio-button.png) center center no-repeat !important;
 }
 
@@ -418,6 +480,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .info-page .laptop-info .laptop-status-form {
     margin-top: 2rem;
+}
+
+.info-page .laptop-info .laptop-status-label {
+    width: 38% !important;
+    cursor: default !important;
+}
+
+
+.info-page .laptop-info .laptop-status-error-icon {
+    width: 100%;
+    height: 2rem;
+    background: url(../icon/memory-error.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    left: 41%;
+    position: absolute;
+    display: none;
 }
 
 .info-page .laptop-info .button-container {
