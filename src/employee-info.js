@@ -1,14 +1,24 @@
+import { validator } from './index.js';
+
+
 const employeeInfo = document.querySelector('.employee-info');
 const laptopInfo = document.querySelector('.laptop-info');
 
 const employeeLine = document.querySelector('.employee-line');
 const laptopLine = document.querySelector('.laptop-line');
 
+const inputArray = new Array();
+const validationErrorArray = document.querySelectorAll('.validation-error');
+const labelArray = document.querySelectorAll('.label-array');
+
 const firstNameLabel = document.querySelector('.first-name-label');
 const lastNameLabel = document.querySelector('.last-name-label');
 
 const firstName = document.querySelector('.first-name');
+inputArray.push(firstName)
+
 const lastName = document.querySelector('.last-name');
+inputArray.push(lastName)
 
 const selectBoxTeam = document.querySelector('.select-box-team');
 const selectBoxPosition = document.querySelector('.select-box-position');
@@ -27,7 +37,11 @@ const emailLabel = document.querySelector('.email-label');
 const phoneLabel = document.querySelector('.phone-label');
 
 const email = document.querySelector('.email');
+inputArray.push(email)
+
+
 const phone = document.querySelector('.phone');
+inputArray.push(phone)
 
 
 const nextBtnBackgroundContainer = document.querySelector('.next-btn-background-container');
@@ -36,11 +50,17 @@ const nextBtn = document.querySelector('.next-btn');
 const { log: l } = console;
 
 
-
 const employeeInfoPageLocalStorage = () => {
 
     firstName.addEventListener('input', () => {
         localStorage.setItem("first-name", `${firstName.value.trim()}`);
+
+        firstName.classList.remove('error');
+
+
+        labelArray[0].style.color = '#000000';
+        validationErrorArray[0].style.color = '#2E2E2E';
+
     });
 
     if (localStorage.getItem("first-name")) {
@@ -51,6 +71,10 @@ const employeeInfoPageLocalStorage = () => {
 
     lastName.addEventListener('input', () => {
         localStorage.setItem("last-name", `${lastName.value.trim()}`);
+        lastName.classList.remove('error');
+
+        labelArray[1].style.color = '#000000';
+        validationErrorArray[1].style.color = '#2E2E2E';
 
     });
     if (localStorage.getItem("last-name")) {
@@ -61,6 +85,11 @@ const employeeInfoPageLocalStorage = () => {
 
     email.addEventListener('input', () => {
         localStorage.setItem("email", `${email.value.trim()}`);
+        email.classList.remove('error');
+
+        labelArray[2].style.color = '#000000';
+        validationErrorArray[2].style.color = '#2E2E2E';
+
 
     });
 
@@ -71,6 +100,11 @@ const employeeInfoPageLocalStorage = () => {
 
     phone.addEventListener('input', () => {
         localStorage.setItem("phone", `${phone.value.trim()}`);
+        phone.classList.remove('error');
+
+        labelArray[3].style.color = '#000000';
+        validationErrorArray[3].style.color = '#2E2E2E';
+
 
     });
 
@@ -89,33 +123,21 @@ const addFocusWithLabel = () => {
     firstNameLabel.addEventListener('click', () => {
         firstName.focus();
     })
-    
+
     lastNameLabel.addEventListener('click', () => {
         lastName.focus();
     })
-    
+
     emailLabel.addEventListener('click', () => {
         email.focus();
     })
-    
+
     phoneLabel.addEventListener('click', () => {
         phone.focus();
     })
 }
 
 addFocusWithLabel();
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 let teamResult = new Array();
@@ -145,8 +167,6 @@ const selectBoxGenerator = () => {
 
 }
 
-
-
 const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, customOnBlur, siblingElement) => {
 
     siblingElement.style.position = 'static';
@@ -155,6 +175,8 @@ const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, 
 
 
     selectBoxName.addEventListener('click', () => {
+        selectBoxName.classList.remove('select-box-error');
+        
         selectBox.style.display = 'flex';
 
         if (boxClickCounter % 2 === 1) {
@@ -191,7 +213,6 @@ const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, 
 
 
 }
-
 
 
 selectBoxGenerator();
@@ -246,6 +267,7 @@ async function getTeamsData() {
                 positionName.classList.remove('disabled-name');
             }
 
+            selectBoxTeam.classList.remove('select-box-error');
         })
 
     })
@@ -308,6 +330,8 @@ async function getPositionData() {
 
 
                     localStorage.setItem('position-name', positionName.textContent.trim());
+
+                    selectBoxPosition.classList.remove('select-box-error');
                 })
             }
 
@@ -318,10 +342,11 @@ async function getPositionData() {
     if (localStorage.getItem('position-name')) {
 
         positionName.textContent = localStorage.getItem('position-name');
+
     }
 
-}
 
+}
 
 
 getPositionData();
@@ -340,6 +365,42 @@ const filterPositionsData = () => {
 
 
 
+const employeeInfoPageValidator = () => {
+    localStorage.setItem('count-validator', '0');
+    for (let i = 0; i < 4; i++) {
+        if (validator(inputArray[i].value, inputArray[i].name) === false) {
+            inputArray[i].classList.add('error');
+            labelArray[i].style.color = '#E52F2F';
+            validationErrorArray[i].style.color = '#E52F2F';
+        } else {
+
+            let counter = +localStorage.getItem('count-validator');
+            counter++;
+            localStorage.setItem('count-validator', `${counter}`);
+        }
+    }
+    selectBoxValidator();
+}
+
+
+
+const selectBoxValidator = () => {
+    if (teamName.textContent.trim() === 'თიმი') {
+        selectBoxTeam.classList.add('select-box-error');
+    } else {
+        let counter = +localStorage.getItem('count-validator');
+        counter++;
+        localStorage.setItem('count-validator', `${counter}`);
+    }
+    if (positionName.textContent.trim() === 'პოზიცია') {
+        selectBoxPosition.classList.add('select-box-error');
+    } else {
+        let counter = +localStorage.getItem('count-validator');
+        counter++;
+        localStorage.setItem('count-validator', `${counter}`);
+
+    }
+}
 
 
 
@@ -362,30 +423,40 @@ const filterPositionsData = () => {
 const showLaptopInfo = () => {
     nextBtn?.addEventListener('click', () => {
 
-        window.location.href = './info-page.html';
+        employeeInfoPageValidator();
 
-        employeeInfo.style.display = 'none';
-        laptopInfo.style.display = 'flex';
+        if (localStorage.getItem('count-validator') === '6') {
 
-        localStorage.setItem('info-page-content', '1')
-        localStorage.setItem('info-page-line', '1')
+            window.location.href = './info-page.html';
 
-        employeeLine.style.display = 'none';
-        laptopLine.style.display = 'flex';
+            employeeInfo.style.display = 'none';
+            laptopInfo.style.display = 'flex';
+
+            localStorage.setItem('info-page-content', '1')
+            localStorage.setItem('info-page-line', '1')
+
+            employeeLine.style.display = 'none';
+            laptopLine.style.display = 'flex';
+        }
     })
 
     nextBtnBackgroundContainer?.addEventListener('click', () => {
 
-        window.location.href = './info-page.html';
+        employeeInfoPageValidator();
 
-        employeeInfo.style.display = 'none';
-        laptopInfo.style.display = 'flex';
+        if (localStorage.getItem('count-validator') === '6') {
 
-        localStorage.setItem('info-page-content', '1')
-        localStorage.setItem('info-page-line', '1')
+            window.location.href = './info-page.html';
 
-        employeeLine.style.display = 'none';
-        laptopLine.style.display = 'flex';
+            employeeInfo.style.display = 'none';
+            laptopInfo.style.display = 'flex';
+
+            localStorage.setItem('info-page-content', '1')
+            localStorage.getItem('count-validation'); localStorage.setItem('info-page-line', '1')
+
+            employeeLine.style.display = 'none';
+            laptopLine.style.display = 'flex';
+        }
     })
 }
 
