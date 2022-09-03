@@ -31,11 +31,6 @@ const CPUName = document.querySelector('.CPU-name');
 const laptopBrand = document.querySelector('.laptop-brand');
 const CPUOptionContainer = document.querySelector('.CPU-option-container');
 
-laptopBrand.addEventListener('resize', () => {
-    laptopBrand.style.width = '1rem';
-
-});
-
 const cpuCoreLabel = document.querySelector('.cpu-core-label');
 const cpuThreadLabel = document.querySelector('.cpu-thread-label');
 
@@ -75,6 +70,8 @@ const submitContainer = document.querySelector('.submit-container');
 
 const { log: l } = console;
 
+let imageValue;
+
 
 const imgUploadGenerator = () => {
     imageInput.addEventListener('click', () => {
@@ -85,17 +82,19 @@ const imgUploadGenerator = () => {
     })
 
     let uploadedImage = "";
-    imageInput.addEventListener('change', function () {
+    imageInput.addEventListener('change', function (e) {
         const reader = new FileReader();
-        reader.addEventListener('load', () => {
+        reader.addEventListener('load', (e) => {
             uploadedImage = reader.result;
             localStorage.setItem('resent-image', uploadedImage);
+
 
             imgFormContainer.style.backgroundImage = `url(${uploadedImage})`;
             imgForm.style.opacity = '0';
             imageInput.title = 'upload new file';
         })
         reader.readAsDataURL(this.files[0]);
+        imageValue = e.target.files[0];
     })
 
     if (localStorage.getItem('resent-image')) {
@@ -103,12 +102,33 @@ const imgUploadGenerator = () => {
         imgFormContainer.style.backgroundImage = `url(${localStorage.getItem('resent-image')})`;
         imgForm.style.opacity = '0';
         imageInput.title = 'upload new file';
+
+        function dataURLtoFile(base64, filename) {
+
+            let arr = base64.split(','),
+                mime = arr[0].match(/:(.*?);/)[1],
+                bstr = atob(arr[1]),
+                n = bstr.length,
+                u8arr = new Uint8Array(n);
+
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+
+            return new File([u8arr], filename, { type: mime });
+        }
+
+        let base64 = localStorage.getItem('resent-image');
+        imageValue = dataURLtoFile(base64, 'image/*');
+
     }
+
+
+
 
 }
 
 imgUploadGenerator();
-
 
 
 const laptopInfoPageLocalStorage = () => {
@@ -329,6 +349,8 @@ async function getLaptopBranData() {
 
             laptopBrand.style.display = 'none';
 
+            localStorage.setItem('laptop-brand-id', `${elm.id}`);
+
             localStorage.setItem('laptop-brand-select-box-click-counter', '0');
             let laptopBrandSelectBoxClickCounter = localStorage.getItem('laptop-brand-select-box-click-counter');
 
@@ -379,6 +401,8 @@ async function getCPUData() {
         div?.addEventListener('click', () => {
 
             CPUOptionContainer.style.display = 'none';
+
+            localStorage.setItem('cpu-id', `${elm.id}`);
 
             localStorage.setItem('CPU-select-box-click-counter', '0');
             let CPUSelectBoxClickCounter = localStorage.getItem('CPU-select-box-click-counter');
@@ -519,7 +543,7 @@ const memoryTypeCheckboxValidator = () => {
 }
 
 const laptopStatusCheckboxValidator = () => {
-    if (localStorage.getItem('laptop-status') === 'new' || localStorage.getItem('laptop-status') === 'old') {
+    if (localStorage.getItem('laptop-status') === 'new' || localStorage.getItem('laptop-status') === 'used') {
         laptopStatusErrorIcon.style.display = 'none';
         laptopStatusLabel.style.color = '#000000';
 
@@ -553,20 +577,6 @@ const imgValidator = () => {
     }
 }
 
-const changePageHelper = () => {
-
-    submitContainer?.addEventListener('click', () => {
-        laptopInfoPageValidator();
-        if (localStorage.getItem('count-validator-laptop-info') === '10') {
-            window.location.href = './successfully-add.html';
-        }
-    })
-
-}
-
-changePageHelper();
-
-
 const showEmployeeInfo = () => {
     goBackBtn?.addEventListener('click', () => {
 
@@ -584,3 +594,75 @@ const showEmployeeInfo = () => {
 }
 
 showEmployeeInfo();
+
+
+async function submitData() {
+
+    const firstNameValue = localStorage.getItem('first-name');
+    const lastNameValue = localStorage.getItem('last-name');
+    const teamId = +localStorage.getItem('team-id');
+    const positionId = +localStorage.getItem('position-id');
+    const phoneValue = localStorage.getItem('phone');
+    const emailValue = localStorage.getItem('email');
+    const token = '9dad885aff6e25fbfd4e379aba0c893d';
+    const laptopNameValue = localStorage.getItem("laptop-name")
+    //imageValue
+    const laptopBrandId = +localStorage.getItem('laptop-brand-id');
+    const laptopCpuValue = localStorage.getItem('CPU-name');
+    const cpuCoreValue = +localStorage.getItem("cpu-core");
+    const cpuThreadValue = +localStorage.getItem("cpu-thread");
+    const laptopRamValue = +localStorage.getItem("laptop-ram");
+    const memoryTypeValue = localStorage.getItem("memory-type");
+    const laptopState = localStorage.getItem("laptop-status");
+    const purchaseNumberValue = localStorage.getItem("purchase-number");
+    const laptopPriceValue = +localStorage.getItem("laptop-price");
+
+    const formData = new FormData();
+
+    formData.append('name', firstNameValue);
+    formData.append('surname', lastNameValue)
+    formData.append('team_id', teamId)
+    formData.append('position_id', positionId)
+    formData.append('phone_number', phoneValue)
+    formData.append('email', emailValue)
+    formData.append('token', token)
+    formData.append('laptop_name', laptopNameValue)
+    formData.append('laptop_image', imageValue)
+    formData.append('laptop_brand_id', laptopBrandId)
+    formData.append('laptop_cpu', laptopCpuValue)
+    formData.append('laptop_cpu_cores', cpuCoreValue)
+    formData.append('laptop_cpu_threads', cpuThreadValue)
+    formData.append('laptop_ram', laptopRamValue)
+    formData.append('laptop_hard_drive_type', memoryTypeValue)
+    formData.append('laptop_state', laptopState)
+    formData.append('laptop_purchase_date', purchaseNumberValue)
+    formData.append('laptop_price', laptopPriceValue)
+
+
+
+    let res = await fetch('https://pcfy.redberryinternship.ge/api/laptop/create', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+
+}
+
+
+
+const changePageHelper = () => {
+
+    submitContainer?.addEventListener('click', () => {
+        laptopInfoPageValidator();
+        if (localStorage.getItem('count-validator-laptop-info') === '10') {
+            submitData();
+
+            //            window.location.href = './successfully-add.html';
+        }
+    })
+
+}
+
+changePageHelper();
