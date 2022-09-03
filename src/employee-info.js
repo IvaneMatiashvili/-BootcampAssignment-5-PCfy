@@ -1,6 +1,5 @@
 import { validator } from './index.js';
 
-
 const employeeInfo = document.querySelector('.employee-info');
 const laptopInfo = document.querySelector('.laptop-info');
 
@@ -321,6 +320,7 @@ async function getPositionData() {
                     positionName.textContent = elm.name;
 
                     localStorage.setItem('position-select-box-click-counter', '0');
+                    localStorage.setItem('position-id', `${elm.id}`);
 
                     let positionSelectBoxClickCounter = localStorage.getItem('position-select-box-click-counter');
                     onBlurSelectPosition.style.display = 'none';
