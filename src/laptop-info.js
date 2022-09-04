@@ -96,6 +96,7 @@ const imgUploadGenerator = () => {
         reader.readAsDataURL(this.files[0]);
         imageValue = e.target.files[0];
     })
+    
 
     if (localStorage.getItem('resent-image')) {
 
@@ -637,8 +638,7 @@ async function submitData() {
     formData.append('laptop_state', laptopState)
     formData.append('laptop_purchase_date', purchaseNumberValue)
     formData.append('laptop_price', laptopPriceValue)
-
-
+l(imageValue)
 
     let res = await fetch('https://pcfy.redberryinternship.ge/api/laptop/create', {
         method: 'POST',
