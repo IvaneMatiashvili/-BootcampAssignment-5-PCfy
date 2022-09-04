@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../font/HelveticaNeue-Medium-11.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: bold;
+    src: url(../font/HelveticaNeue-Bold-02.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../font/HelveticaNeue-01.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../font/HelveticaNeue-Light-08.ttf) format('truetype');
+}
+
+.get-laptop-info {
+    background-color: #FFFFFF;
+}
+
+.get-laptop-info header {
+    width: 100%;
+    height: 10rem;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.get-laptop-info .back-arrow-container {
+    height: 30%;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.get-laptop-info .back-arrow-container img {
+    cursor: pointer;
+}
+
+.get-laptop-info .back-arrow {
+    width: 9%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.get-laptop-info .title-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-laptop-info .empty-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-laptop-info main {
+    width: 100%;
+    min-height: 120vh;
+    display: flex;
+    justify-content: center;
+}
+
+.get-laptop-info .get-laptop-info-main {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+.get-laptop-info .image-and-employee-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.get-laptop-info .image-and-employee-info .image-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.get-laptop-info .image-and-employee-info img {
+    width: 100%;
+    height: 25rem;
+}
+
+.get-laptop-info .information-list {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5rem;
+}
+
+.get-laptop-info  ul {
+    width: 40%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    margin-top: 2rem;
+}
+
+.get-laptop-info  li {
+    display: flex;
+    align-items: center;
+    align-self: start;
+    margin-top: 2rem;
+}
+
+.get-laptop-info  li p {
+    font-family: 'HelveticaNeue';
+    font-weight: normal;
+    font-size: 1.3rem;
+    color: #797979;
+}
+
+.get-laptop-info .description p {
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #2E2E2E;
+}
+
+.get-laptop-info .values  {
+    padding-left: 0.5rem;
+}
+
+.get-laptop-info .line {
+    width: 105%;
+    height: 1px;
+    background: #A5A5A5;
+    margin-top: 6rem;
+}
+.get-laptop-info .laptop-information-container  {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.get-laptop-info .increase-ram-values-padding {
+    padding-left: 3rem;
+}
+
+.get-laptop-info .laptop-information-container .information-list {
+    width:50%;
+    padding-left: 0;
+}
+
+.get-laptop-info .laptop-information-container .ram-memory {
+    padding-left: 5rem;
+}
+
+.get-laptop-info .laptop-information-container .laptop-status {
+    width: 48%;
+}
+.get-laptop-info .laptop-information-container .laptop-status-li {
+    padding-left: 0;
+}
+    
+    
