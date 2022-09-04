@@ -3,6 +3,14 @@ import { validator } from './index.js';
 const employeeInfo = document.querySelector('.employee-info');
 const laptopInfo = document.querySelector('.laptop-info');
 
+
+const backArrowContainerEmployee = document.querySelector('.back-arrow-container-employee');
+const backArrowContainerLaptop = document.querySelector('.back-arrow-container-laptop');
+
+const backArrowIconLaptop = document.querySelector('.back-arrow-icon-laptop');
+
+const employeeInfoHeader = document.querySelector('.employee-info-header');
+
 const employeeLine = document.querySelector('.employee-line');
 const laptopLine = document.querySelector('.laptop-line');
 
@@ -12,6 +20,11 @@ const imgErrorIcon = document.querySelector('.img-error-icon');
 let imageInput = document.querySelector('.upload-img');
 const imgFormContainer = document.querySelector('.img-form-container');
 const imgForm = document.querySelector('.img-form');
+
+const uploadAgainContainer = document.querySelector('.upload-again-container');
+
+const imgNameAfterUpload = document.querySelector('.img-name');
+const imgSize = document.querySelector('.img-size');
 
 const laptopInfoValidationErrorArray = document.querySelectorAll('.laptop-info-validation-error');
 const laptopPageLabelErrorArray = document.querySelectorAll('.laptop-page-label-error');
@@ -95,8 +108,27 @@ const imgUploadGenerator = () => {
         })
         reader.readAsDataURL(this.files[0]);
         imageValue = e.target.files[0];
+
+        uploadAgainContainer.style.display = 'flex';
+
+        imgNameAfterUpload.textContent = `${e.target.files[0].name},`;
+        localStorage.setItem('image-name-after-upload', e.target.files[0].name);
+
+        function bytesToSize(bytes) {
+            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
+            if (bytes === 0) return 'n/a'
+            const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
+            if (i === 0) return `${bytes} ${sizes[i]})`
+            return `${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`
+        }
+
+        let size = +e.target.files[0].size;
+
+        imgSize.textContent = bytesToSize(size);
+        localStorage.setItem('image-size', imgSize.textContent.trim());
+
     })
-    
+
 
     if (localStorage.getItem('resent-image')) {
 
@@ -121,6 +153,12 @@ const imgUploadGenerator = () => {
 
         let base64 = localStorage.getItem('resent-image');
         imageValue = dataURLtoFile(base64, 'image/*');
+
+        uploadAgainContainer.style.display = 'flex';
+
+        imgNameAfterUpload.textContent = localStorage.getItem('image-name-after-upload');
+
+        imgSize.textContent = localStorage.getItem('image-size');
 
     }
 
@@ -592,6 +630,35 @@ const showEmployeeInfo = () => {
         laptopLine.style.display = 'none';
         employeeLine.style.display = 'block';
     })
+
+    employeeInfoHeader?.addEventListener('click', () => {
+
+        window.location.href = './info-page.html';
+
+        laptopInfo.style.display = 'none';
+        employeeInfo.style.display = 'flex';
+
+        localStorage.setItem('info-page-content', '0')
+        localStorage.setItem('info-page-line', '0')
+
+        laptopLine.style.display = 'none';
+        employeeLine.style.display = 'block';
+    })
+
+    backArrowIconLaptop?.addEventListener('click', () => {
+
+        window.location.href = './info-page.html';
+
+        laptopInfo.style.display = 'none';
+        employeeInfo.style.display = 'flex';
+
+        localStorage.setItem('info-page-content', '0')
+        localStorage.setItem('info-page-line', '0')
+
+        laptopLine.style.display = 'none';
+        employeeLine.style.display = 'block';
+
+    })
 }
 
 showEmployeeInfo();
@@ -638,7 +705,6 @@ async function submitData() {
     formData.append('laptop_state', laptopState)
     formData.append('laptop_purchase_date', purchaseNumberValue)
     formData.append('laptop_price', laptopPriceValue)
-l(imageValue)
 
     let res = await fetch('https://pcfy.redberryinternship.ge/api/laptop/create', {
         method: 'POST',
@@ -647,6 +713,14 @@ l(imageValue)
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(error => console.log(error))
+
+    document.querySelectorAll('input').forEach(element => {
+        element.value = '';
+    })
+
+    localStorage.clear()
+
+    window.location.href = './successfully-add.html';
 
 }
 
@@ -659,10 +733,23 @@ const changePageHelper = () => {
         if (localStorage.getItem('count-validator-laptop-info') === '10') {
             submitData();
 
-            //            window.location.href = './successfully-add.html';
         }
     })
 
 }
 
 changePageHelper();
+
+backArrowContainerLaptop.style.display = 'none';
+backArrowContainerEmployee.style.display = 'flex';
+
+const navigator = () => {
+
+    if (laptopInfo.style.display === 'flex') {
+
+        backArrowContainerLaptop.style.display = 'flex';
+        backArrowContainerEmployee.style.display = 'none';
+    }
+}
+
+navigator()

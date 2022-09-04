@@ -1,4 +1,5 @@
 const entriesListMainSection = document.querySelector('.entries-list-main-section');
+const backArrowIcon = document.querySelector('.back-arrow-icon');
 
 let linksArray = new Array();
 
@@ -391,6 +392,16 @@ async function getLaptopFullDataById(id) {
 }
 
 
-
-
 getInfoDescriptionData();
+
+
+
+const navigator = () => {
+
+        backArrowIcon.addEventListener('click', () => {
+
+            window.location.href = localStorage.getItem('to-entries-list-page');
+        })
+}
+
+navigator()

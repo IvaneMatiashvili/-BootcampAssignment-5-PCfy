@@ -3,6 +3,13 @@ import { validator } from './index.js';
 const employeeInfo = document.querySelector('.employee-info');
 const laptopInfo = document.querySelector('.laptop-info');
 
+const backArrowContainerEmployee = document.querySelector('.back-arrow-container-employee');
+const backArrowContainerLaptop = document.querySelector('.back-arrow-container-laptop');
+
+const backArrowIconEmployee = document.querySelector('.back-arrow-icon-employee');
+
+const laptopInfoHeader = document.querySelector('.laptop-info-header');
+
 const employeeLine = document.querySelector('.employee-line');
 const laptopLine = document.querySelector('.laptop-line');
 
@@ -175,7 +182,7 @@ const selectOptionGenerator = (selectBox, selectBoxName, selectBoxClickCounter, 
 
     selectBoxName.addEventListener('click', () => {
         selectBoxName.classList.remove('select-box-error');
-        
+
         selectBox.style.display = 'flex';
 
         if (boxClickCounter % 2 === 1) {
@@ -383,7 +390,6 @@ const employeeInfoPageValidator = () => {
 }
 
 
-
 const selectBoxValidator = () => {
     if (teamName.textContent.trim() === 'თიმი') {
         selectBoxTeam.classList.add('select-box-error');
@@ -403,23 +409,6 @@ const selectBoxValidator = () => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const showLaptopInfo = () => {
     nextBtn?.addEventListener('click', () => {
 
@@ -437,7 +426,9 @@ const showLaptopInfo = () => {
 
             employeeLine.style.display = 'none';
             laptopLine.style.display = 'flex';
+
         }
+
     })
 
     nextBtnBackgroundContainer?.addEventListener('click', () => {
@@ -458,6 +449,44 @@ const showLaptopInfo = () => {
             laptopLine.style.display = 'flex';
         }
     })
+
+    laptopInfoHeader?.addEventListener('click', () => {
+
+        employeeInfoPageValidator();
+
+        if (localStorage.getItem('count-validator') === '6') {
+
+            window.location.href = './info-page.html';
+
+            employeeInfo.style.display = 'none';
+            laptopInfo.style.display = 'flex';
+
+            localStorage.setItem('info-page-content', '1')
+            localStorage.getItem('count-validation'); localStorage.setItem('info-page-line', '1')
+
+            employeeLine.style.display = 'none';
+            laptopLine.style.display = 'flex';
+
+        }
+    })
 }
 
 showLaptopInfo();
+
+
+const navigator = () => {
+
+    if (employeeInfo.style.display === 'flex') {
+
+        backArrowContainerEmployee.style.display = 'flex';
+        backArrowContainerLaptop.style.display = 'none';
+    }
+
+
+    backArrowIconEmployee.addEventListener('click', () => {
+
+        window.location.href = './index.html';
+    })
+}
+
+navigator()
