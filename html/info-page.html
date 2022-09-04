@@ -18,8 +18,16 @@
 
     <body class="info-page">
         <header>
+            <div class="back-arrow-container-employee">
+                <div class="back-arrow"></div>
+                <img src="/icon/back-arrow.png" alt="arrow icon" class="back-arrow-icon-employee back-arrow-icon">
+            </div>
+            <div class="back-arrow-container-laptop">
+                <div class="back-arrow"></div>
+                <img src="/icon/back-arrow.png" alt="arrow icon" class="back-arrow-icon-laptop back-arrow-icon">
+            </div>
             <ul class="header-list">
-                <li>
+                <li class="employee-info-header">
                     <p>
                         თანამშრომლის ინფო
                     </p>
@@ -27,7 +35,7 @@
 
                     </div>
                 </li>
-                <li>
+                <li class="laptop-info-header">
                     <p>
                         ლეპტოპის მახასიათებლები
                     </p>
@@ -184,6 +192,22 @@
                                 </ul>
                             </li>
                         </ul>
+                        <ul class="upload-again-container">
+                            <li class="img-name-size">
+                                <p class="img-name">
+                                </p>
+
+                                <p class="img-size">
+                                </p>
+                            </li>
+                            <li class="upload-again-label-container">
+                                <div class="label-upload-new-img-container">
+                                    <label for="upload-img" class="label-upload-new-img">თავიდან ატვირთე </label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="img-bottom-margin"></div>
 
                         <ul class="form-control">
                             <li>
@@ -195,12 +219,13 @@
 
                                     </li>
                                     <li>
-                                        <input type="text" class="laptop-name" name="laptop-name"
-                                            placeholder="HP " value="">
+                                        <input type="text" class="laptop-name" name="laptop-name" placeholder="HP "
+                                            value="">
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error laptop-info-validation-error">ლათინური ასოები, ციფრები,
+                                        <div class="first-error validation-error laptop-info-validation-error">ლათინური
+                                            ასოები, ციფრები,
                                             !@#$%^&*()_+= </div>
 
                                     </li>
@@ -263,12 +288,12 @@
 
                                     </li>
                                     <li>
-                                        <input type="text" class="cpu-core" name="cpu-core" placeholder="14"
-                                            value="">
+                                        <input type="text" class="cpu-core" name="cpu-core" placeholder="14" value="">
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ
+                                            ციფრები</div>
 
                                     </li>
                                 </ul>
@@ -288,7 +313,8 @@
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ
+                                            ციფრები</div>
 
                                     </li>
                                 </ul>
@@ -309,7 +335,8 @@
                                     </li>
 
                                     <li>
-                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ
+                                            ციფრები</div>
                                     </li>
                                 </ul>
                             </li>
@@ -354,6 +381,12 @@
                                             onfocus="(this.type='date', this.showPicker())" onblur="this.type='text'">
 
                                     </li>
+                                    <li>
+                                        <div class="first-error validation-error empty-error">
+                                            ტექსტი
+                                        </div>
+
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -365,12 +398,13 @@
 
                                     </li>
                                     <li>
-                                        <input type="text" class="laptop-price" name="laptop-price"
-                                            placeholder="0000" value="">
+                                        <input type="text" class="laptop-price" name="laptop-price" placeholder="0000"
+                                            value="">
 
                                     </li>
                                     <li>
-                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ ციფრები</div>
+                                        <div class="first-error validation-error laptop-info-validation-error">მხოლოდ
+                                            ციფრები</div>
 
                                     </li>
                                 </ul>
