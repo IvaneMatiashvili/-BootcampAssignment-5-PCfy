@@ -60,6 +60,8 @@ main ul {
 }
 
 main .text-container P {
+    font-family: 'HelveticaNeue';
+    font-weight: bold;
     color: #292929;
     font-size: 1.8rem;
     font-weight: 700;
@@ -78,17 +80,44 @@ main .see-list-container {
     cursor: pointer;
 }
 
+main .see-list-container:hover {
+    background-color: #317AD0;
+}
+
+main .see-list-container:focus {
+    background-color: #1A5DAB;
+}
+
+main .see-list-container:active {
+    background-color: #1A5DAB;
+}
+
 main .see-list-container a {
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
     color: #FFFFFF;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     cursor: pointer;
     text-decoration: none;
 }
 
 main .see-main-page-container a {
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
     color: #0089A7;
     font-size: 1.3rem;
-    font-weight: 500;
     cursor: pointer;
     text-decoration: none;
+}
+
+main .see-main-page-container a:hover {
+    color: #317AD0;
+}
+
+main .see-main-page-container a:focus {
+    color: #1A5DAB;
+}
+
+main .see-main-page-container a:active {
+    color: #1A5DAB;
 }

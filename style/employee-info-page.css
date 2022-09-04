@@ -31,6 +31,56 @@
     justify-content: center;
 }
 
+.info-page .back-arrow-container-employee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+}
+
+.info-page .back-arrow-container-employee img:hover {
+    box-shadow: 5px 5px 30px 1px #abb0b6;
+    border-radius: 2rem;
+}
+
+.info-page .back-arrow-container-employee img:focus {
+    box-shadow: 5px 5px 30px 1px #92979c;
+    border-radius: 2rem;
+}
+
+.info-page .back-arrow-container-employee img:active {
+    box-shadow: 5px 5px 30px 1px #92979c;
+    ;
+    border-radius: 2rem;
+}
+
+.info-page .back-arrow-container-laptop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+    display: none;
+}
+
+.info-page .back-arrow-container-laptop img:hover {
+    box-shadow: 5px 5px 30px 1px #abb0b6;
+    border-radius: 2rem;
+}
+
+.info-page .back-arrow-container-laptop img:focus {
+    box-shadow: 5px 5px 30px 1px #92979c;
+    border-radius: 2rem;
+}
+
+.info-page .back-arrow-container-laptop img:active {
+    box-shadow: 5px 5px 30px 1px #92979c;
+    border-radius: 2rem;
+}
+
+.info-page .back-arrow-icon {
+    cursor: pointer;
+}
+
 .info-page .header-list {
     width: 100%;
     display: flex;
@@ -47,25 +97,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .info-page .header-list li p {
+    font-family: 'HelveticaNeue';
+    font-weight: bold;
     margin-top: 1rem;
     color: #232323;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.2rem;
     margin-bottom: 1rem;
 }
 
+
 .info-page .header-list li .line {
-    width: 10rem;
+    width: 12rem;
     height: 2px;
     background-color: #000000;
 }
 
+.info-page .header-list li p:hover {
+    text-shadow: #abb0b6 1px 2px 10px;
+}
+
+
 .info-page .header-list li .large-line {
-    width: 13rem;
+    width: 16.5rem;
 }
 
 .info-page .header-list li .laptop-line {
@@ -123,22 +181,27 @@
     width: 93%;
 }
 
-.info-page .employee-info .inline-form li p {
+.info-page .label-array {
+    font-family: 'HelveticaNeue';
     font-weight: 500;
-    font-size: 1.1rem;
     color: #000000;
-    cursor: pointer !important;
+    font-size: 1.1rem;
+    cursor: pointer;
 }
 
-.info-page .employee-info .inline-form li .validation-error {
+.info-page .validation-error {
+    font-family: 'HelveticaNeue';
     font-weight: 300;
     color: #2E2E2E;
-    font-size: 14px;
+    font-size: 0.89rem;
 }
 
 
 .info-page .employee-info .inline-form input {
-    font: 15px 'Montserrat', sans-serif;
+    font-family: 'HelveticaNeue' !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+    font-size: 1rem !important;
     padding-top: 0;
     padding-left: 1rem;
     margin: 10px 0;
@@ -151,9 +214,33 @@
     box-sizing: border-box;
 }
 
+input {
+    font-family: 'HelveticaNeue' !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+    font-size: 1rem !important;
+}
+
 select:focus,
 select:hover {
     outline: none;
+}
+
+input:focus,
+input:hover {
+    outline: none !important;
+}
+
+input:focus {
+    background-color: rgba(43, 75, 242, 0.06) !important;
+    border-color: #6499FF !important;
+}
+
+input::placeholder {
+    font-family: 'HelveticaNeue' !important;
+    font-weight: normal !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-size: 1rem !important;
 }
 
 .info-page .employee-info .error {
@@ -185,31 +272,27 @@ select:hover {
     cursor: pointer;
     z-index: 99;
 }
+
+.info-page .employee-info .form-control .select-box:hover {
+    background-color: #dfdfdf !important;
+}
+
+.info-page .employee-info .form-control .select-box:focus {
+    background-color: #EBEBEB !important;
+}
+
+.info-page .employee-info .form-control .select-box:active {
+    background-color: #EBEBEB !important;
+}
+
 .info-page .employee-info .form-control .select-box-error {
-    border: 2px solid  #E52F2F !important;
+    border: 2px solid #E52F2F !important;
 }
 
 .info-page .employee-info .form-control .position-select-box-disabled .disabled-name {
     color: #929191 !important;
 }
 
-.info-page .employee-info .form-control select {
-    padding-left: 3rem;
-    color: #080808;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    margin: 0;
-    min-width: 100%;
-    height: 100%;
-    cursor: pointer;
-    padding-left: 2rem;
-    border-radius: 8px;
-    background: none;
-    z-index: 1;
-    overflow: hidden;
-    box-sizing: border-box;
-}
 
 .info-page .employee-info .form-control .select-box p {
     font-family: 'HelveticaNeue';
@@ -298,21 +381,11 @@ select:hover {
 }
 
 
-.info-page .employee-info .input-control li p {
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: #000000;
-    cursor: pointer;
-}
-
-.info-page .employee-info .input-control li .validation-error {
-    font-weight: 300;
-    color: #2E2E2E;
-    font-size: 14px;
-}
-
 .info-page .employee-info .input-control input {
-    font: 15px 'Montserrat', sans-serif;
+    font-family: 'HelveticaNeue' !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+    font-size: 1rem !important;
     padding-top: 0;
     padding-left: 1rem;
     margin: 10px 0;
@@ -333,6 +406,7 @@ select:hover {
     justify-content: flex-end;
 }
 
+
 .info-page .employee-info .next-button-container .next-button-background {
     display: flex;
     justify-content: center;
@@ -344,6 +418,18 @@ select:hover {
     margin-top: 4rem;
     cursor: pointer;
     margin-bottom: 4rem;
+}
+
+.info-page .employee-info .next-button-background:hover {
+    background-color: #317AD0 !important;
+}
+
+.info-page .employee-info .next-button-background:focus {
+    background-color: #1A5DAB !important;
+}
+
+.info-page .employee-info .next-button-background:active {
+    background-color: #1A5DAB !important;
 }
 
 

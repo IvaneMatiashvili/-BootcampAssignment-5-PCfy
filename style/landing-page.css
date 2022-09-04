@@ -15,6 +15,17 @@
     width: 100%;
 }
 
+.landing-page .nav-btn-container:hover {
+    background-color: #317AD0 !important;
+}
+
+.landing-page .nav-btn-container:focus {
+    background-color: #1A5DAB !important;
+}
+.landing-page .nav-btn-container:active {
+    background-color: #1A5DAB !important;
+}
+
 
 .landing-page main {
     display: flex;

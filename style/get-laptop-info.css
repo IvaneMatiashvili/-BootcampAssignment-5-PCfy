@@ -51,6 +51,19 @@
     cursor: pointer;
 }
 
+.get-laptop-info .back-arrow-container img:hover {
+    box-shadow: 5px 5px 30px 1px #abb0b6;
+    border-radius: 2rem;
+}
+.get-laptop-info .back-arrow-container img:focus {
+    box-shadow: 5px 5px 30px 1px #92979c;
+    border-radius: 2rem;
+}
+.get-laptop-info .back-arrow-container img:active {
+    box-shadow: 5px 5px 30px 1px #92979c;;
+    border-radius: 2rem;
+}
+
 .get-laptop-info .back-arrow {
     width: 9%;
     height: 100%;

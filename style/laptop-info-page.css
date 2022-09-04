@@ -53,7 +53,6 @@
     background: url(../img/upload-file-borer.png) no-repeat;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-bottom: 4rem;
     cursor: pointer;
 }
 
@@ -90,6 +89,100 @@
     justify-content: center;
 }
 
+.info-page .laptop-info .add-img-container .choose-img p {
+    font-family: 'HelveticaNeue';
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #4386A9;
+    margin-bottom: 1rem;
+}
+
+
+.info-page .laptop-info .upload-again-container {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    display: none;
+}
+
+.info-page .laptop-info .img-name-size {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: url(../icon/image-yes.png);
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+    background-position: 0%;
+    margin-left: 7%;
+}
+
+.info-page .laptop-info .img-name-size p {
+    font-family: 'HelveticaNeue';
+    font-weight: normal;
+    font-size: 1rem;
+    margin-left: 3rem;
+    color: #202020;
+}
+
+.info-page .laptop-info .img-size {
+    margin-left: 1rem !important;
+    color: #5F5F5F !important;
+}
+
+.info-page .laptop-info .upload-again-label-container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.info-page .laptop-info .label-upload-new-img-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.info-page .laptop-info .label-upload-new-img {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    background-color: #62A1EB;
+    color: #FFFFFF;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.info-page .laptop-info .label-upload-new-img:hover {
+    background-color: #317AD0 !important;
+}
+
+.info-page .laptop-info .label-upload-new-img:focus {
+    background-color: #1A5DAB !important;
+}
+
+.info-page .laptop-info .label-upload-new-img:active {
+    background-color: #1A5DAB !important;
+}
+
+.info-page .laptop-info .img-bottom-margin {
+    margin-bottom: 4rem;
+}
+
+
 .info-page .laptop-info .img-error-icon-container {
     width: 100%;
     display: flex;
@@ -108,12 +201,6 @@
     position: absolute;
     bottom: 55%;
     display: none;
-}
-
-.info-page .laptop-info .add-img-container p {
-    color: #4386A9;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
 }
 
 .info-page .laptop-info .file-upload-container {
@@ -136,11 +223,34 @@
     cursor: pointer;
 }
 
+.info-page .laptop-info .label-container:hover {
+    background-color: #317AD0 !important;
+
+}
+
+.info-page .laptop-info .label-container:focus {
+    background-color: #1A5DAB !important;
+
+}
+
+.info-page .laptop-info .label-container:active {
+    background-color: #1A5DAB !important;
+
+}
+
 .info-page .laptop-info .label-upload-img {
+    width: 100%;
+    height: 100%;
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
+    font-size: 1.3rem;
     margin: 0;
     color: #FFFFFF;
-    font-size: 1.2rem;
     cursor: pointer;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -179,22 +289,27 @@
     width: 93%;
 }
 
-.info-page .laptop-info .inline-form li p {
+.laptop-info .laptop-page-label-error {
+    font-family: 'HelveticaNeue';
     font-weight: 500;
-    font-size: 1.1rem;
     color: #000000;
+    font-size: 1.1rem;
     cursor: pointer;
 }
 
-.info-page .laptop-info .inline-form li .validation-error {
+.info-page .laptop-info .validation-error {
+    font-family: 'HelveticaNeue';
     font-weight: 300;
     color: #2E2E2E;
-    font-size: 14px;
+    font-size: 0.89rem;
 }
 
 
 .info-page .laptop-info .inline-form input {
-    font: 15px 'Montserrat', sans-serif;
+    font-family: 'HelveticaNeue' !important;
+    font-weight: normal !important;
+    color: #000000 !important;
+    font-size: 1rem !important;
     padding-top: 0;
     padding-left: 1rem;
     margin: 10px 0;
@@ -238,6 +353,17 @@
     cursor: pointer;
     z-index: 99;
 }
+.info-page .laptop-info .form-control .select-box:hover {
+    background-color: #dfdfdf !important;
+}
+
+.info-page .laptop-info .form-control .select-box:focus {
+    background-color: #EBEBEB !important;
+}
+
+.info-page .laptop-info .form-control .select-box:active {
+    background-color: #EBEBEB !important;
+}
 
 .info-page .laptop-info .form-control .select-box-laptop-brand {
     margin-top: 5px;
@@ -245,25 +371,6 @@
 
 .info-page .laptop-info .form-control .select-box-error {
     border: 2px solid #E52F2F !important;
-}
-
-.info-page .laptop-info .form-control select {
-    font: 18px 'Montserrat', sans-serif;
-    padding-left: 3rem;
-    color: #080808;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    margin: 0;
-    min-width: 100%;
-    height: 100%;
-    cursor: pointer;
-    padding-left: 2rem;
-    border-radius: 8px;
-    background: none;
-    z-index: 1;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
 .info-page .laptop-info .form-control .select-box p {
@@ -416,7 +523,10 @@
 .info-page .laptop-info .error-and-label p {
     width: 67%;
     cursor: default !important;
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
     color: #000000;
+    font-size: 1.1rem;
 }
 
 .info-page .laptop-info .memory-error-icon {
@@ -477,6 +587,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     right: 5%;
 }
 
+.info-page .laptop-info .empty-error {
+    font-size: 14px;
+    opacity: 0;
+    cursor: default;
+}
+
+.info-page .laptop-info .purchase-number-label {
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
+    color: #000000;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
 .info-page .laptop-info .laptop-price {
     background: url(../icon/lari.png);
     background-size: 1rem;
@@ -535,6 +659,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
 }
 
+.info-page .laptop-info .next-btn-container:hover {
+    background-color: #317AD0 !important;
+}
+
+.info-page .laptop-info .next-btn-container:focus {
+    background-color: #1A5DAB !important;
+}
+
+.info-page .laptop-info .next-btn-container:active {
+    background-color: #1A5DAB !important;
+}
+
 
 .info-page .laptop-info .button-container a {
     color: #FFFFFF;
@@ -546,4 +682,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #62A1EB;
     font-size: 1.1rem;
     cursor: pointer;
+}
+
+.info-page .laptop-info .go-back-btn-container p:hover {
+    color: #317AD0 !important;
+}
+
+.info-page .laptop-info .go-back-btn-container p:focus {
+    color: #1A5DAB !important;
+}
+
+.info-page .laptop-info .go-back-btn-container p:active {
+    color: #1A5DAB !important;
 }
