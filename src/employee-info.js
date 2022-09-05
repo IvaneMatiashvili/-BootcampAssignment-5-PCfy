@@ -3,6 +3,8 @@ import { validator } from './index.js';
 const employeeInfo = document.querySelector('.employee-info');
 const laptopInfo = document.querySelector('.laptop-info');
 
+const header = document.querySelector('header');
+
 const backArrowContainerEmployee = document.querySelector('.back-arrow-container-employee');
 const backArrowContainerLaptop = document.querySelector('.back-arrow-container-laptop');
 
@@ -122,8 +124,6 @@ const employeeInfoPageLocalStorage = () => {
 }
 
 employeeInfoPageLocalStorage();
-
-
 
 const addFocusWithLabel = () => {
     firstNameLabel.addEventListener('click', () => {
@@ -480,7 +480,33 @@ const navigator = () => {
 
         backArrowContainerEmployee.style.display = 'flex';
         backArrowContainerLaptop.style.display = 'none';
+
+        if (window.matchMedia('screen and (max-width: 768px)').matches) {
+            if (localStorage.getItem('info-page-content') === '0') {
+
+                header.style.background = '#F6F6F6 url(../icon/employee-info-icon.png)';
+            }
+
+        } else {
+            header.style.background = 'none';
+
+        }
+        window.addEventListener('resize', () => {
+            if (window.matchMedia('screen and (max-width: 768px)').matches) {
+                if (localStorage.getItem('info-page-content') === '0') {
+
+                    header.style.background = '#F6F6F6 url(../icon/employee-info-icon.png)';
+                }
+
+            } else {
+                header.style.background = 'none';
+
+            }
+
+        });
+
     }
+
 
 
     backArrowIconEmployee.addEventListener('click', () => {

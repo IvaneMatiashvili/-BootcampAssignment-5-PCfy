@@ -127,6 +127,7 @@
     font-size: 1rem;
     margin-left: 3rem;
     color: #202020;
+    width: 50% !important; 
 }
 
 .info-page .laptop-info .img-size {
@@ -148,6 +149,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-left: 2rem;
 }
 
 .info-page .laptop-info .label-upload-new-img {
@@ -353,6 +355,7 @@
     cursor: pointer;
     z-index: 99;
 }
+
 .info-page .laptop-info .form-control .select-box:hover {
     background-color: #dfdfdf !important;
 }
@@ -535,14 +538,16 @@
     background: url(../icon/memory-error.png);
     background-repeat: no-repeat;
     cursor: pointer;
-    margin-top: 0.6rem;
+    margin-top: 0.5rem;
     position: absolute;
-    left: 62%;
+    left: 62.3%;
     display: none;
 }
 
 .info-page .laptop-info label {
-    font: 15px 'Montserrat', sans-serif;
+    font-family: 'HelveticaNeue';
+    font-size: 1.1rem;
+    font-weight: normal;
     margin: 0;
     margin-left: 0.5rem;
     margin-right: 3rem;
@@ -568,6 +573,22 @@
     user-select: none !important;
     appearance: none;
     background: url(../icon/radio-btn.png) center center no-repeat;
+    background-color: #FFFFFF !important;
+}
+
+.info-page .laptop-info .input-label-container input[type=radio]:hover {
+    border: none !important;
+    background-color: #FFFFFF !important;
+}
+
+.info-page .laptop-info .input-label-container input[type=radio]:active {
+    border: none !important;
+    background-color: #FFFFFF !important;
+}
+
+.info-page .laptop-info .input-label-container input[type=radio]:focus {
+    border: none !important;
+    background-color: #FFFFFF !important;
 }
 
 .info-page .laptop-info .input-label-container .checked {
@@ -624,7 +645,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(../icon/memory-error.png);
     background-repeat: no-repeat;
     cursor: pointer;
-    margin-top: 0.6rem;
+    margin-top: 0.5rem;
     left: 41%;
     position: absolute;
     display: none;
@@ -673,14 +694,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 .info-page .laptop-info .button-container a {
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
     color: #FFFFFF;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-decoration: none;
 }
 
 .info-page .laptop-info .go-back-btn-container p {
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
     color: #62A1EB;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
@@ -694,4 +719,332 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .info-page .laptop-info .go-back-btn-container p:active {
     color: #1A5DAB !important;
+}
+
+
+@media (max-width: 768px) {
+
+    .info-page .back-arrow-container-laptop {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+        background: transparent url(../icon/2-2.png);
+        background-position: center 90%;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+
+    .info-page .back-arrow-container-laptop img {
+        content: url(../icon/small-arrow-icon.png);
+        padding-left: 1.5rem;
+    }
+
+    .info-page .laptop-info {
+        width: 100%;
+    }
+
+    .info-page .laptop-info form {
+        width: 100%;
+        background-color: #FFFFFF;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .info-page .laptop-info .img-form {
+        width: 100%;
+    }
+
+    .info-page .laptop-info .img-form-container {
+        margin-left: 0;
+        background: url(../icon/small-border.png) no-repeat;
+        background-size: 100% 100%;
+        margin-top: 2rem;
+        min-height: 15rem;
+        width: 90%;
+    }
+
+    .info-page .laptop-info .img-border-error {
+        background: url(../icon/red-small-border.png) no-repeat !important;
+        background-size: 100% !important;
+        background-position: 50% !important;
+        background-repeat: no-repeat;
+        padding-right: 0 !important;
+    }
+
+    .info-page .laptop-info .img-form-container .add-image-icon {
+        width: 100%;
+        height: 10rem;
+        background: url(../icon/photo.png) no-repeat, url(../icon/upload-laptop-image.png) no-repeat;
+        background-position: center 10%, center 75% !important;
+        background-size: 15%, 40% !important;
+    }
+
+    .info-page .laptop-info .img-error-icon {
+        width: 40%;
+        height: 20%;
+        background: url(../icon/img-error.png);
+        background-position: center;
+        background-size: 15%;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 52%;
+        left: 30.5%;
+        display: none;
+    }
+
+    .info-page .laptop-info .upload-again-container {
+        margin-top: 2rem;
+        width: 90%;
+    }
+
+    .info-page .laptop-info .img-name-size {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        margin-left: 0;
+        background-size: 1.5rem !important;
+        background-position: 0% !important;
+    }
+
+    .info-page .laptop-info .img-name {
+        margin-left: 2.5rem !important;
+        margin-top: 0.5rem;
+    }
+
+    .info-page .laptop-info .img-size {
+        margin-left: 2.5rem !important;
+        margin-top: 0.5rem;
+    }
+
+    .info-page .laptop-info .upload-again-label-container {
+        justify-content: flex-end;
+        align-items: end;
+    }
+
+    .info-page .laptop-info .label-upload-new-img-container {
+        width: 100%;
+    }
+
+    .info-page .laptop-info .label-upload-new-img {
+        margin: 0;
+        height: 60%;
+        font-size: 14px;
+    }
+
+
+    .info-page .laptop-info .img-form-container .add-img-container {
+        width: 0;
+    }
+
+
+    .info-page .laptop-info .img-form-container .upload-img {
+        width: 92%;
+        height: 29%;
+        position: absolute;
+        left: 4%;
+        top: 14%;
+    }
+
+    .info-page .laptop-info .file-upload-container .label-container {
+        display: none;
+    }
+
+    .info-page .laptop-info .add-img-container .choose-img p {
+        display: none;
+    }
+
+    .info-page .laptop-info .form-control {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .info-page .laptop-info .form-control li {
+        margin-left: 0;
+    }
+
+    .info-page .laptop-info .inline-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .info-page .laptop-info .laptop-name-container-center-for-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .info-page .laptop-info form .line {
+        width: 100%;
+        height: 8px;
+        margin: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+        background: #ebebeb75;
+    }
+
+    .info-page .laptop-info .select-box-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90%;
+    }
+
+    .info-page .laptop-info .custom-option-container {
+        width: 90% !important;
+        margin-top: 4.1rem !important;
+    }
+
+    .info-page .laptop-info .CPU-option-container {
+        margin-top: 3.84rem !important;
+    }
+
+    .info-page .laptop-info .cpu-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90%;
+    }
+
+    .info-page .laptop-info .ram-memory-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .info-page .laptop-info .ram-memory-info .ram-and-memory-info-list-for-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-page .laptop-info .date-and-price-list-for-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-page .laptop-info .laptop-state-list-for-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-page .laptop-info .cpu-features .cpu-select {
+        margin-right: 0;
+    }
+
+    .info-page .laptop-info .cpu-info {
+        margin-left: 0 !important;
+    }
+
+    .info-page .laptop-info .ram-and-memory {
+        margin-left: 0 !important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+    }
+
+    .info-page .laptop-info .memory-error-icon {
+        width: 20%;
+        left: 50%;
+    }
+
+    .info-page .laptop-info .input-label-container {
+        justify-content: flex-start;
+    }
+
+    .info-page .laptop-info .memory-type-list-for-mobile {
+        justify-content: flex-start;
+        align-items: start;
+    }
+
+    .info-page .laptop-info .error-and-label p {
+        width: 100% !important;
+    }
+
+    .info-page .laptop-info .input-label-container input[type=radio] {
+        width: 2rem !important;
+        background: url(../icon/radio-btn.png)no-repeat;
+        background-position: 0%;
+        background-color: #FFFFFF !important;
+        margin: 0;
+        border: none !important;
+    }
+
+    .info-page .laptop-info .input-label-container label {
+        margin: 0;
+        margin-right: 4rem;
+    }
+
+    .info-page .laptop-info .input-label-container .checked {
+
+        background: url(../icon/radio-btn.png) 0% no-repeat, url(../icon/checked-radio-button.png) 20% no-repeat !important;
+    }
+
+    .info-page .laptop-info form .laptop-date {
+        margin-bottom: 0rem;
+    }
+
+    .info-page .laptop-info form .laptop-status-form {
+        margin-top: 0rem;
+    }
+
+    .info-page .laptop-info .laptop-status-error-icon {
+        width: 20%;
+        left: 65%;
+    }
+
+
+    .info-page .laptop-info form .button-container {
+        width: 90%;
+        margin: 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .info-page .laptop-info form .button-container .submit-container {
+        width: 50%;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-page .laptop-info form .button-container a {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-page .laptop-info .inline-form input {
+        width: 100% !important;
+    }
+
+
 }

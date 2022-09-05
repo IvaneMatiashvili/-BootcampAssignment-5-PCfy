@@ -20,12 +20,14 @@
         <header>
             <div class="back-arrow-container-employee">
                 <div class="back-arrow"></div>
-                <img src="/icon/back-arrow.png" alt="arrow icon" class="back-arrow-icon-employee back-arrow-icon">
+                <img src="../icon/back-arrow.png" alt="arrow icon" class="back-arrow-icon-employee back-arrow-icon">
             </div>
             <div class="back-arrow-container-laptop">
                 <div class="back-arrow"></div>
-                <img src="/icon/back-arrow.png" alt="arrow icon" class="back-arrow-icon-laptop back-arrow-icon">
+                <img src="../icon/back-arrow.png" alt="arrow icon" class="back-arrow-icon-laptop back-arrow-icon">
             </div>
+
+            <div class="navigation-for-mobile"></div>
             <ul class="header-list">
                 <li class="employee-info-header">
                     <p>
@@ -51,9 +53,9 @@
 
                 <section class="employee-info">
                     <form>
-                        <ul class="form-control">
+                        <ul class="form-control name-and-surname">
                             <li>
-                                <ul class="inline-form">
+                                <ul class="inline-form surname-inline-form">
                                     <li>
                                         <p class="first-name-label label-array">
                                             სახელი
@@ -71,26 +73,25 @@
                                 </ul>
                             </li>
                             <li>
-                                <ul class="inline-form">
+                                <ul class="inline-form surname-inline-form"">
                                     <li>
-                                        <p class="last-name-label label-array">
-                                            გვარი
-                                        </p>
-                                    </li>
-
-                                    <li>
-
-                                        <input type="text" class="last-name" name="name" placeholder="ბაგრატიონი"
-                                            value="">
-                                    </li>
-
-                                    <li>
-
-                                        <div class="first-error validation-error">მინიმუმ 2 სიმბოლო, ქართული ასოები
-                                        </div>
-                                    </li>
-                                </ul>
+                                        <p class=" last-name-label label-array">
+                                    გვარი
+                                    </p>
                             </li>
+
+                            <li>
+
+                                <input type="text" class="last-name" name="name" placeholder="ბაგრატიონი" value="">
+                            </li>
+
+                            <li>
+
+                                <div class="first-error validation-error">მინიმუმ 2 სიმბოლო, ქართული ასოები
+                                </div>
+                            </li>
+                        </ul>
+                        </li>
 
                         </ul>
 
@@ -121,7 +122,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <ul class="form-control input-control">
+                        <ul class="form-control input-control email-phone">
                             <li>
 
                                 <p class="email-label label-array">
@@ -129,7 +130,7 @@
                                 </p>
                             </li>
 
-                            <li>
+                            <li class="email-phone-input">
                                 <input type="email" class="email" name="email" placeholder="grish666@redberry.ge"
                                     value="">
                             </li>
@@ -138,7 +139,7 @@
                             </li>
                         </ul>
 
-                        <ul class="form-control input-control">
+                        <ul class="form-control input-control email-phone">
                             <li>
 
                                 <p class="phone-label label-array">
@@ -146,12 +147,13 @@
                                 </p>
                             </li>
 
-                            <li>
+                            <li class="email-phone-input">
                                 <input type="tel" class="phone" name="phone" placeholder="+995 598 00 07 01"
                                     minlength="5" value="">
                             </li>
                             <li>
-                                <div class="first-error validation-error">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს
+                                <div class="first-error validation-error mobile-validation-error">უნდა აკმაყოფილებდეს
+                                    ქართული მობ-ნომრის ფორმატს
                                 </div>
                             </li>
                         </ul>
@@ -167,6 +169,8 @@
                     <form>
                         <ul class="img-form-container">
                             <li class="img-form">
+                                <div class="add-image-icon"></div>
+                                <div class="add-image-text"></div>
                                 <ul class="add-img-container">
                                     <li class="img-error-icon-container">
                                         <div class="img-error-icon"></div>
@@ -210,7 +214,7 @@
                         <div class="img-bottom-margin"></div>
 
                         <ul class="form-control">
-                            <li>
+                            <li class="laptop-name-container-center-for-mobile">
                                 <ul class="inline-form">
                                     <li>
                                         <p class="laptop-name-label laptop-page-label-error">
@@ -321,7 +325,7 @@
                             </li>
                         </ul>
                         <ul class="form-control ram-memory-info">
-                            <li>
+                            <li class="ram-and-memory-info-list-for-mobile">
                                 <ul class="inline-form">
                                     <li>
                                         <p class="ram-label laptop-page-label-error">
@@ -340,7 +344,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="ram-and-memory-info-list-for-mobile">
                                 <ul class="inline-form ram-and-memory">
                                     <li class="error-and-label">
                                         <p class="memory-type-label">
@@ -348,7 +352,7 @@
                                         </p>
                                         <div class="memory-error-icon"></div>
                                     </li>
-                                    <li>
+                                    <li class="memory-type-list-for-mobile">
                                         <div class="input-label-container">
 
                                             <input type="radio" name="memory-type" id="SSD" class="memory-type"
@@ -366,7 +370,7 @@
                         </ul>
                         <div class="line"></div>
                         <ul class="form-control">
-                            <li>
+                            <li class="date-and-price-list-for-mobile">
 
                                 <ul class="inline-form laptop-date">
                                     <li>
@@ -389,7 +393,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="date-and-price-list-for-mobile">
                                 <ul class="inline-form">
                                     <li>
                                         <p class="laptop-price-label laptop-page-label-error">
@@ -414,7 +418,7 @@
 
                         <ul class="form-control">
 
-                            <li>
+                            <li class="laptop-state-list-for-mobile">
                                 <ul class="inline-form laptop-status-form">
                                     <li class="error-and-label">
                                         <p class="laptop-status-label">

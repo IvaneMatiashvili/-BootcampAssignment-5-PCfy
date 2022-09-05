@@ -48,11 +48,6 @@
     border-radius: 2rem;
 }
 
-.info-page .back-arrow-container-employee img:active {
-    box-shadow: 5px 5px 30px 1px #92979c;
-    ;
-    border-radius: 2rem;
-}
 
 .info-page .back-arrow-container-laptop {
     display: flex;
@@ -68,11 +63,6 @@
 }
 
 .info-page .back-arrow-container-laptop img:focus {
-    box-shadow: 5px 5px 30px 1px #92979c;
-    border-radius: 2rem;
-}
-
-.info-page .back-arrow-container-laptop img:active {
     box-shadow: 5px 5px 30px 1px #92979c;
     border-radius: 2rem;
 }
@@ -118,7 +108,7 @@
 }
 
 .info-page .header-list li p:hover {
-    text-shadow: #abb0b6 1px 2px 10px;
+    text-shadow: #a0a0a0 3px 3px 20px;
 }
 
 
@@ -434,8 +424,10 @@ input::placeholder {
 
 
 .info-page .employee-info .next-button-container p {
+    font-family: 'HelveticaNeue';
+    font-weight: 500;
     color: #FFFFFF;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     cursor: pointer;
 }
 
@@ -445,4 +437,191 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+
+    .info-page body {
+        background-color: #FFFFFF;
+    }
+
+    .info-page header {
+        background: #F6F6F6 url(../icon/employee-info-icon.png);
+        background-repeat: no-repeat no-repeat !important;
+        background-position: center center !important;
+        justify-content: flex-start;
+        height: 5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .info-page .back-arrow-container-employee {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+        background: transparent url(../icon/1-2.png);
+        background-position: center 90%;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+
+    .info-page .back-arrow-container-employee img {
+        content: url("../icon/small-arrow-icon.png");
+        padding-left: 1.5rem;
+    }
+
+    .info-page .header-list {
+        width: 100%;
+        display: none;
+    }
+
+    .info-page .main-section {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .info-page .employee-info {
+        width: 100%;
+    }
+
+    .info-page .employee-info form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        overflow: hidden;
+    }
+
+    .info-page .employee-info .form-control {
+        margin-top: 1rem;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 0;
+        gap: 0 !important;
+        margin-top: 2rem !important;
+    }
+
+    .info-page .employee-info .name-and-surname li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-page .employee-info .name-and-surname li p {
+        width: 90%;
+    }
+
+    .info-page .employee-info .name-and-surname li div {
+        width: 90%;
+    }
+
+    .info-page .employee-info .input-control {
+        width: 100%;
+        justify-content: center !important;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .info-page .employee-info .form-control li {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .info-page .employee-info .email-phone {
+        margin-top: 1.5rem !important;
+    }
+
+    .info-page .employee-info .email-phone li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-page .employee-info .email-phone li p {
+        width: 90%;
+    }
+
+    .info-page .employee-info .email-phone li div {
+        width: 90%;
+    }
+
+    .info-page .employee-info .inline-form {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .info-page .employee-info .surname-inline-form {
+        margin-top: 1.5rem !important;
+    }
+
+    .info-page .employee-info .inline-form input {
+        width: 90%;
+    }
+
+    .info-page .employee-info .input-control {
+        display: flex;
+    }
+
+    .info-page .employee-info .input-control input {
+        width: 90%;
+    }
+
+    .info-page .employee-info .mobile-validation-error {
+        font-size: 0;
+    }
+
+    .info-page .employee-info .mobile-validation-error::after {
+        font-size: 0.89rem;
+        content: "ქართული მობ-ნომრის ფორმატი";
+    }
+
+
+    .info-page .employee-info .form-control .select-box-list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info-page .employee-info .form-control .select-box-container {
+        width: 90%;
+        justify-content: center;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .info-page .employee-info .custom-option-container {
+        width: 90% !important;
+    }
+
+    .info-page .employee-info .form-control .select-box {
+        margin-top: 0;
+        background-position: 94%;
+    }
+
+    .info-page .employee-info .form-control .select-box-position {
+        margin-top: 2.5rem;
+    }
+
+    .info-page .employee-info .next-button-container {
+        width: 90%;
+        justify-self: center;
+    }
+
+    .info-page .employee-info .next-button-container .next-button-background {
+        width: 40%;
+        height: 3rem;
+    }
+
+    .info-page footer {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .info-page footer img {
+        display: none;
+    }
 }

@@ -3,6 +3,7 @@ import { validator } from './index.js';
 const employeeInfo = document.querySelector('.employee-info');
 const laptopInfo = document.querySelector('.laptop-info');
 
+const header = document.querySelector('header');
 
 const backArrowContainerEmployee = document.querySelector('.back-arrow-container-employee');
 const backArrowContainerLaptop = document.querySelector('.back-arrow-container-laptop');
@@ -20,6 +21,8 @@ const imgErrorIcon = document.querySelector('.img-error-icon');
 let imageInput = document.querySelector('.upload-img');
 const imgFormContainer = document.querySelector('.img-form-container');
 const imgForm = document.querySelector('.img-form');
+
+const addImageIcon = document.querySelector('.add-image-icon');
 
 const uploadAgainContainer = document.querySelector('.upload-again-container');
 
@@ -91,6 +94,7 @@ const imgUploadGenerator = () => {
         imgLabel[0].style.color = '#4386A9';
         imgLabel[1].style.color = '#4386A9';
         imgErrorIcon.style.display = 'none';
+        addImageIcon.style.background = 'url(../icon/photo.png) no-repeat, url(../icon/upload-laptop-image.png) no-repeat'
         imgFormContainer.classList.remove('img-border-error');
     })
 
@@ -602,6 +606,7 @@ const imgValidator = () => {
         imgLabel[0].style.color = '#4386A9';
         imgLabel[1].style.color = '#4386A9';
         imgErrorIcon.style.display = 'none';
+        addImageIcon.style.background = 'url(../icon/photo.png) no-repeat, url(../icon/upload-laptop-image.png) no-repeat'
         imgFormContainer.classList.remove('img-border-error')
 
         let counter = +localStorage.getItem('count-validator-laptop-info');
@@ -611,6 +616,8 @@ const imgValidator = () => {
         imgLabel[0].style.color = '#E52F2F';
         imgLabel[1].style.color = '#E52F2F';
         imgErrorIcon.style.display = 'block';
+
+        addImageIcon.style.background = 'url(../icon/photo.png) no-repeat, url(../icon/red-upload-laptop-img.png) no-repeat'
         imgFormContainer.classList.add('img-border-error');
 
     }
@@ -732,7 +739,6 @@ const changePageHelper = () => {
         laptopInfoPageValidator();
         if (localStorage.getItem('count-validator-laptop-info') === '10') {
             submitData();
-
         }
     })
 
@@ -749,6 +755,32 @@ const navigator = () => {
 
         backArrowContainerLaptop.style.display = 'flex';
         backArrowContainerEmployee.style.display = 'none';
+
+        if (window.matchMedia('screen and (max-width: 768px)').matches) {
+
+            if (localStorage.getItem('info-page-content') === '1') {
+                header.style.background = '#F6F6F6 url(../icon/laptop-features.png)';
+            }
+
+        } else {
+            header.style.background = 'none';
+
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.matchMedia('screen and (max-width: 768px)').matches) {
+
+                if (localStorage.getItem('info-page-content') === '1') {
+                    header.style.background = '#F6F6F6 url(../icon/laptop-features.png)';
+                }
+
+            } else {
+                header.style.background = 'none';
+
+            }
+
+        });
+
     }
 }
 

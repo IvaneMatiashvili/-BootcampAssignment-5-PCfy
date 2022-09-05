@@ -121,3 +121,75 @@ main .see-main-page-container a:focus {
 main .see-main-page-container a:active {
     color: #1A5DAB;
 }
+
+
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main .img-container {
+        width: 100%;
+    }
+
+    main img {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    main ul {
+        width: 100%;
+        height: 60vh;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main .text-container P {
+        width: 70%;
+        text-align: center;
+        line-height: 180%;
+    }
+
+    main .see-list-container {
+        margin-top: 40%;
+        width: 80%;
+        height: 50%;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    main .see-list-container a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 4rem !important;
+    }
+
+    main .see-main-page-container  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+}

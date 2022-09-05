@@ -27,7 +27,7 @@
 }
 
 .get-laptop-info {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
 }
 
 .get-laptop-info header {
@@ -55,12 +55,15 @@
     box-shadow: 5px 5px 30px 1px #abb0b6;
     border-radius: 2rem;
 }
+
 .get-laptop-info .back-arrow-container img:focus {
     box-shadow: 5px 5px 30px 1px #92979c;
     border-radius: 2rem;
 }
+
 .get-laptop-info .back-arrow-container img:active {
-    box-shadow: 5px 5px 30px 1px #92979c;;
+    box-shadow: 5px 5px 30px 1px #92979c;
+    ;
     border-radius: 2rem;
 }
 
@@ -131,8 +134,8 @@
     padding-left: 5rem;
 }
 
-.get-laptop-info  ul {
-    width: 40%;
+.get-laptop-info ul {
+    width: 50%;
     height: 100%;
     list-style: none;
     display: flex;
@@ -142,18 +145,25 @@
     margin-top: 2rem;
 }
 
-.get-laptop-info  li {
+.get-laptop-info li {
     display: flex;
     align-items: center;
     align-self: start;
+    height: 2rem;
     margin-top: 2rem;
 }
 
-.get-laptop-info  li p {
+.get-laptop-info li p {
     font-family: 'HelveticaNeue';
     font-weight: normal;
     font-size: 1.3rem;
     color: #797979;
+    width: 120% !important;
+}
+
+.get-laptop-info .block p {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
 }
 
 .get-laptop-info .description p {
@@ -163,7 +173,7 @@
     color: #2E2E2E;
 }
 
-.get-laptop-info .values  {
+.get-laptop-info .values {
     padding-left: 0.5rem;
 }
 
@@ -173,7 +183,8 @@
     background: #A5A5A5;
     margin-top: 6rem;
 }
-.get-laptop-info .laptop-information-container  {
+
+.get-laptop-info .laptop-information-container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -184,7 +195,7 @@
 }
 
 .get-laptop-info .laptop-information-container .information-list {
-    width:50%;
+    width: 50%;
     padding-left: 0;
 }
 
@@ -195,8 +206,120 @@
 .get-laptop-info .laptop-information-container .laptop-status {
     width: 48%;
 }
+
 .get-laptop-info .laptop-information-container .laptop-status-li {
     padding-left: 0;
 }
-    
-    
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 0 !important;
+        overflow: hidden;
+    }
+
+    header {
+        height: 6rem !important;
+    }
+
+    .get-laptop-info .back-arrow-container img {
+        content: url(../icon/small-arrow-icon.png);
+    }
+
+    .get-laptop-info .title-container {
+        margin-bottom: 1rem;
+    }
+
+    .get-laptop-info .title-container img {
+        content: url(../icon/laptop-info-small.png);
+    }
+
+    .get-laptop-info .get-laptop-info-main {
+        width: 90%;
+        margin-top: 0 !important;
+    }
+
+    .get-laptop-info .image-and-employee-info {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .get-laptop-info .image-and-employee-info .image-container {
+        width: 100%;
+    }
+
+    .get-laptop-info .image-and-employee-info .image-container img {
+        width: 100%;
+        height: 15rem;
+    }
+
+    .get-laptop-info .information-list {
+        padding-left: 0;
+        justify-content: space-between;
+        width: 100% !important;
+    }
+
+    .get-laptop-info .information-list ul {
+        width: 50% !important;
+        align-self: start;
+    }
+
+    .get-laptop-info li {
+        display: flex;
+        align-items: center;
+        align-self: start;
+        margin-top: 0.1rem !important;
+    }
+
+    .get-laptop-info li p {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .get-laptop-info .description p {
+        font-size: 14px;
+    }
+
+    .get-laptop-info .laptop-information-container {
+        flex-direction: column;
+    }
+
+    .get-laptop-info .laptop-information-container .ram-memory {
+        padding-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .get-laptop-info .laptop-information-container .increase-ram-values-padding {
+        padding-left: 0;
+        margin-top: 0;
+    }
+
+    .get-laptop-info .laptop-information-container .description {
+        margin-top: 0;
+    }
+
+    .get-laptop-info .laptop-information-container .cpu {
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+    .line {
+        margin-top: 3rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .increase-height {
+        margin-bottom: 0.3rem !important;
+    }
+
+    .decrease-height {
+        margin-top: 0 !important;
+    }
+
+    .last-div {
+        margin-bottom: 3rem !important;
+        margin-top: 0 !important;
+    }
+
+}

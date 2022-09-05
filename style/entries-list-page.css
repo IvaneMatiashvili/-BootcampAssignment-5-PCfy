@@ -27,7 +27,7 @@
 }
 
 .entries-list {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
 }
 
 .entries-list header {
@@ -116,37 +116,47 @@
     box-sizing: border-box;
 }
 
+.entries-list .data-info-container:hover {
+    box-shadow: 5px 5px 30px 1px #d1e1ee;
+}
+
 .entries-list .data-info-container img {
-    width: 50%;
-    height: 85%;
+    width: 50% !important;
+    height: 85% !important;
     margin: auto;
     margin-left: 1rem;
     border-radius: 10px;
 }
 
 .entries-list .data-info-container ul {
-    margin: auto;
-    margin-left: 2rem;
+    padding-left: 2rem;
     list-style: none;
     width: 50%;
-    height: 60%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-content: space-around;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .entries-list .data-info-container li {
     width: 80%;
-    height: 50%;
+    height: 15% !important;
     margin: 0.3rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .entries-list .data-info-container .name-container {
     margin-top: 0 !important;
+    box-sizing: border-box;
 }
 
 .entries-list .data-info-container .link-container {
-    margin-top: 2rem !important;
+    padding-top: 2rem !important;
 }
 
 .entries-list .data-info-container .name {
@@ -186,4 +196,71 @@
 
 .entries-list footer {
     margin-top: 10rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 0 !important;
+        overflow: hidden;
+    }
+
+    header {
+        height: 6rem !important;
+    }
+
+    .entries-list .back-arrow-container img {
+        content: url(../icon/small-arrow-icon.png);
+    }
+
+    .entries-list .title-container {
+        margin-bottom: 1rem;
+    }
+
+    .entries-list .title-container img {
+        content: url(../icon/small-entries-lis.png);
+    }
+
+    .entries-list .main-section {
+        width: 95%;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .entries-list .data-info-container {
+        height: 8.5rem;
+    }
+
+    .entries-list .data-info-container img {
+        width: 50% !important;
+        height: 85% !important;
+        margin: auto;
+        margin-left: 1rem;
+        border-radius: 10px;
+    }
+
+    .entries-list .data-info-container ul {
+        padding-left: 1rem;
+    }
+
+    .entries-list .data-info-container ul p {
+        width: 97% !important;
+        font-size: 1rem;
+    }
+
+    .entries-list .data-info-container .name-container {
+        padding-bottom: 0.1rem !important;
+        width: 97%;
+    }
+
+    .entries-list .data-info-container .link-container {
+        padding-top: 1rem !important;
+    }
+
+    .entries-list .data-info-container .name-container p {
+        font-size: 14px !important;
+    }
+
+    .entries-list .data-info-container .link-container a {
+        font-size: 14px !important;
+    }
 }

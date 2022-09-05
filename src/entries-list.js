@@ -64,6 +64,14 @@ async function getInfoDescriptionData() {
         createEntriesListDescriptionHtmlContent();
     }
 
+    if(document.querySelectorAll('.name')){
+        document.querySelectorAll('.name').forEach(el => {
+            if(el.textContent.trim().length > 22){
+                el.textContent = `${el.textContent.trim().slice(0, 15)}...`
+            }
+        })
+    }
+
 
     if (document.querySelectorAll('.link').length !== 0) {
 
@@ -213,17 +221,17 @@ async function getLaptopFullDataById(id) {
                         </li>
                     </ul>
                     <ul>
-                        <li>
+                        <li class="block">
                             <P>
                                 ${fullDataUserName[0]} ${fullDataUserSurname[0]}
                             </P>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                             ${fullDataTeam[0]}
                             </p>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                             ${fullDataPosition[0]}
                             </p>
@@ -233,7 +241,7 @@ async function getLaptopFullDataById(id) {
                             ${fullDataEmail[0]}
                             </p>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                             ${fullDataPhone[0]}
                             </p>
@@ -273,22 +281,22 @@ async function getLaptopFullDataById(id) {
                         </li>
                     </ul>
                     <ul class="values increase-ram-values-padding">
-                        <li>
+                        <li class="block">
                             <P>
                                 ${fullDataLaptopName[0]}
                             </P>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                                 ${fullDataBrand[0]}
                             </p>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                                 ${fullDataRam[0]}
                             </p>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                                 ${fullDataHardDriveType[0]}
                             </p>
@@ -316,17 +324,17 @@ async function getLaptopFullDataById(id) {
                         </li>
                     </ul>
                     <ul class="values cpu">
-                        <li>
+                        <li class="block">
                             <P>
                                 ${fullDataCpuName[0]}
                             </P>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                                 ${fullDataCores[0]}
                             </p>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                                 ${fullDataThreads[0]}
                             </p>
@@ -344,7 +352,7 @@ async function getLaptopFullDataById(id) {
                 <div class="information-list">
 
                     <ul class="description laptop-status">
-                        <li>
+                        <li class="increase-height">
                             <p>
                                 ლეპტოპის მდგომარეობა:
                             </p>
@@ -356,29 +364,29 @@ async function getLaptopFullDataById(id) {
                         </li>
                     </ul>
                     <ul class="values increase-ram-values-padding laptop-status-li">
-                        <li>
+                        <li class="block">
                             <P>
                                 ${fullDataState[0]}
                             </P>
                         </li>
-                        <li>
+                        <li class="block">
                             <p>
                                 ${fullDataPrice[0]}
                             </p>
                         </li>
                     </ul>
                 </div>
-                <div class="information-list ram-memory">
+                <div class="information-list ram-memory last-div">
 
                     <ul class="description">
-                        <li>
+                        <li class="decrease-height">
                             <p>
                                 შეძენის რიცხვი:
                             </p>
                         </li>
                     </ul>
                     <ul class="values cpu">
-                        <li>
+                        <li class="block">
                             <P>
                                 ${fullDataPurchaseDate[0]}
                             </P>
