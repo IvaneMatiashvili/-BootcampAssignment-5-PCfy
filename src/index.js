@@ -1,4 +1,15 @@
 
+/**
+ * Welcome to index.js
+ * 
+ * author-Ivane Matishvili
+ * 
+ * @ - Important to read: If you try to open a web-page locally, via file:// protocol,
+ *     you’ll find that import/export directives don’t work. Use a local web-server, 
+ *     such as static-server or use the “live server” capability of your editor, 
+ *     such as VS Code Live Server Extension to use modules. full information(https://javascript.info/modules-intro)
+ * 
+ */
 
 export const validator = (textValue, elementType) => {
     switch (elementType) {
