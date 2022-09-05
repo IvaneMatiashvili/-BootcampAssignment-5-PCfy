@@ -39,7 +39,7 @@ const { log: l } = console;
 let infoDescriptionData = new Array();
 
 async function getInfoDescriptionData() {
-    let response = await fetch('https://pcfy.redberryinternship.ge/api/laptops?token=9dad885aff6e25fbfd4e379aba0c893d');
+    let response = await fetch('https://pcfy.redberryinternship.ge/api/laptops?token=0c5b7d92237f90170a17166293ab9f0d');
     let responseData = await response.json();
 
     if (responseData.data.length === 0) {
@@ -127,7 +127,7 @@ const createEntriesListDescriptionHtmlContent = () => {
 
 async function getLaptopFullDataById(id) {
 
-    const response = await fetch(`https://pcfy.redberryinternship.ge/api/laptop/${id}?token=9dad885aff6e25fbfd4e379aba0c893d`);
+    const response = await fetch(`https://pcfy.redberryinternship.ge/api/laptop/${id}?token=0c5b7d92237f90170a17166293ab9f0d`);
     const responseData = await response.json();
 
     let eachFullDescription = responseData.data;

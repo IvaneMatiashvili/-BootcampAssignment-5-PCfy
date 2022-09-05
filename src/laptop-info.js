@@ -679,7 +679,7 @@ async function submitData() {
     const positionId = +localStorage.getItem('position-id');
     const phoneValue = localStorage.getItem('phone');
     const emailValue = localStorage.getItem('email');
-    const token = '9dad885aff6e25fbfd4e379aba0c893d';
+    const token = '0c5b7d92237f90170a17166293ab9f0d';
     const laptopNameValue = localStorage.getItem("laptop-name")
     //imageValue
     const laptopBrandId = +localStorage.getItem('laptop-brand-id');
