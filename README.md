@@ -12,6 +12,7 @@ Movie-quotes also has an admin side, where movies can be added.
 * [Getting Started](#getting-started)
 * [Migrations](#migration)
 * [Development](#development)
+* [Create Administrator](#create-administrator)
 * [Deployment with CI / CD](#deployment-with-ci-\-cd)
 * [Project Structure](#project-structure)
 * [Service Interaction Map](#service-interaction-map)
@@ -97,6 +98,26 @@ when working on JS and tailwind you may run:
 ```
 it builds your js files into executable scripts.
 It also watches and generates your tailwind properties in app.css
+
+#
+### Create Administrator
+
+in order to create an administrator you need to run:
+
+```sh
+  php artisan create:admin
+```
+
+after this, you need to generate a username:
+
+```sh
+  username
+```
+and password:
+
+```sh
+  ******
+```
 
 #
 ### Project Structure
