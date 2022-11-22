@@ -13,11 +13,7 @@ Movie-quotes also has an admin side, where movies can be added.
 * [Migrations](#migration)
 * [Development](#development)
 * [creation of Administrator](#creation-of-administrator)
-* [Deployment with CI / CD](#deployment-with-ci-\-cd)
 * [Project Structure](#project-structure)
-* [Service Interaction Map](#service-interaction-map)
-* [Server Infrastructure](#server-infrastructure)
-* [Database Backups](#database-backups)
 
 #
 ### Prerequisites
