@@ -57,6 +57,9 @@ npm run dev
 ```
 in order to build and watch your JS/tailwind resources.
 
+
+And now you should provide **.env** file all the necessary environment variables:
+
 #
 **MYSQL:**
 >DB_CONNECTION=mysql\
