@@ -98,3 +98,37 @@ when working on JS and tailwind you may run:
 it builds your js files into executable scripts.
 It also watches and generates your tailwind properties in app.css
 
+#
+### Project Structure
+
+```bash
+├─── app
+│   ├─── Console
+│   ├─── Exceptions
+│   ├─── Http
+│   ├─── Providers
+│   │... Models
+├─── bootstrap
+├─── config
+├─── database
+├─── public
+├─── resources
+├─── routes
+├─── storage
+├─── tests
+├─── vendor
+- .env
+- artisan
+- composer.json
+- package.json
+- phpunit.xml
+- tailwind.config.js
+- vite.config.js
+```
+
+Project structure is fairly straitforward(at least for laravel developers)...
+
+For more information about project standards, take a look at these docs:
+* [Laravel](https://laravel.com/docs/9.x)
+
+[Database Design Diagram](./readme/draw-sql/draw-sql.md "Draw.io")
