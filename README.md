@@ -97,5 +97,4 @@ when working on JS and tailwind you may run:
 ```
 it builds your js files into executable scripts.
 It also watches and generates your tailwind properties in app.css
-If you want to watch files during development, execute instead:
 
