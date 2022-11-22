@@ -62,9 +62,9 @@ in order to build and watch your JS/tailwind resources.
 >DB_CONNECTION=mysql\
 >DB_HOST=127.0.0.1\
 >DB_PORT=3306\
->DB_DATABASE=*****\
->DB_USERNAME=*****\
->DB_PASSWORD=*****\
+>DB_DATABASE=*****
+>DB_USERNAME=*****
+>DB_PASSWORD=*****
 
 #
 
