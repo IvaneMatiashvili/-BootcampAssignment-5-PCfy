@@ -30,15 +30,15 @@ Movie-quotes also has an admin side, where movies can be added.
 ### Tech Stack
 
 * <img src="readme/assets/laravel.png" height="18" style="position: relative; top: 4px" /> [Laravel@9.x](https://laravel.com/docs/9.x) - back-end framework
-* <img src="readme/assets/mix.png" height="18" style="position: relative; top: 4px" /> [Vite](https://laravel.com/docs/9.x/vite/) - helps to bundle application's CSS and JavaScript files into production ready assets.
-* <img src="readme/assets/spatie.png" height="19" style="position: relative; top: 4px" /> [Tailwind CSS](https://tailwindcss.com/) - makes it quicker to write and maintain the code of your application
+* <img src="readme/assets/vite.png" height="18" style="position: relative; top: 4px" /> [Vite](https://laravel.com/docs/9.x/vite/) - helps to bundle application's CSS and JavaScript files into production ready assets.
+* <img src="readme/assets/tailwind.svg.png" height="19" style="position: relative; top: 4px" /> [Tailwind CSS](https://tailwindcss.com/) - makes it quicker to write and maintain the code of your application
 * <img src="readme/assets/spatie.png" height="19" style="position: relative; top: 4px" /> [Spatie Translatable](https://github.com/spatie/laravel-translatable) - package for translation
 
 #
 ### Getting Started
-1\. First of all you need to clone E Space repository from github:
+1\. First of all you need to clone Movie-quotes repository from github:
 ```sh
-git clone https://github.com/e-space1/espace-back.git
+git clone https://github.com/RedberryInternship/ivane-movie-quotes.git
 ```
 
 2\. Next step requires you to run *composer install* in order to install all the dependencies.
@@ -55,13 +55,7 @@ and also:
 ```sh
 npm run dev
 ```
-in order to build your JS/SaaS resources.
-
-4\. Now we need to set our env file. Go to the root of your project and execute this command.
-```sh
-cp .env.example .env
-```
-And now you should provide **.env** file all the necessary environment variables:
+in order to build and watch your JS/tailwind resources.
 
 #
 **MYSQL:**
@@ -71,44 +65,5 @@ And now you should provide **.env** file all the necessary environment variables
 >DB_DATABASE=*****
 >DB_USERNAME=*****
 >DB_PASSWORD=*****
-
-#
-**MAILGUN:**
->MAILGUN_DOMAIN=******
->MAILGUN_SECRET=******
-#
-**Georgian Card:**
->MERCHANT_ID=******
->PAGE_ID=******
->ACCOUNT_ID=******
->BACK_URL_S=******
->BACK_URL_F=******
->REFUND_API_PASS=******
->CCY=******
-#
-**Twilio:**
->TWILIO_SID=******
->TWILIO_TOKEN=******
->TWILIO_FROM=******
-#
-**Maradit:**
->MARADIT_HTTPS=true
->MARADIT_USERNAME=******
->MARADIT_PASSWORD=******
-#
-**Google Cloud Messaging:**
->FCM_SERVER_KEY=******
->FCM_SENDER_ID=******
-after setting up **.env** file, execute:
-```sh
-php artisan config:cache
-```
-in order to cache environment variables.
-
-4\. Now execute in the root of you project following:
-```sh
-  php artisan key:generate
-```
-Which generates auth key.
 
 ##### Now, you should be good to go!
