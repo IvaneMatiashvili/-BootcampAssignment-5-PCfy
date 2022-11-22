@@ -73,3 +73,29 @@ And now you should provide **.env** file all the necessary environment variables
 #
 
 ##### Now, you should be good to go!
+
+#
+### Migration
+if you've completed getting started section, then migrating database if fairly simple process, just execute:
+```sh
+php artisan migrate
+```
+
+#
+### Development
+
+You can run Laravel's built-in development server by executing:
+
+```sh
+  php artisan serve
+```
+
+when working on JS and tailwind you may run:
+
+```sh
+  npm run dev
+```
+it builds your js files into executable scripts.
+It also watches and generates your tailwind properties in app.css
+If you want to watch files during development, execute instead:
+
